@@ -20,7 +20,6 @@
 \newcommand{\rs}{r_s}
 \newcommand{\rb}{r_b}
 \newcommand{\vw}{v_w}
-\newcommand{\cs}{c_s}
 
 \newcommand{\dxdy}[2]{\frac{\partial #1}{\partial #2} }
 \newcommand{\ddr}[1]{\dxdy{#1}{r}}
@@ -53,7 +52,7 @@
 \topmargin -1 cm
 \defcitealias{WangMerritt:2004a}{WM04}	
 
-\author[Generozov, Metzger, \& Stone]{Aleksey Generozov$\thanks{E-mail: ag@astro.columbia.edu}$, Nicholas Stone, Brian~D.~Metzger$\footnotemark[1]$\\
+\author[Generozov, Metzger, \& Stone]{Aleksey Generozov$\thanks{E-mail: ag@astro.columbia.edu}$, Brian~D.~Metzger, Nicholas Stone$\footnotemark[1]$\\
 Columbia Astropysics Labratory, Columbia University, 550 West 120th Street, New York, NY 10027}
 
 
@@ -84,7 +83,7 @@ The gas environment also plays an important role in determining observables (lig
 
 The gas in the vicinity of a black hole may come from several sources. \citealt{Ho:2009a} proposes three different mechanisms (1) Mass loss in winds (particularly from evolved stars) (2) Stellar-stellar collisions in dense environments (3) Tidal disruptions of stars. To estimate (a lower limit on the accretion rate), \citealt{Ho:2009a} calculates the Bondi accretion rate based on typical observed gas densities and temperatures taken from Chandra X-ray observations. A second estimate is obtained from the wind mass loss rate from the observed stellar densities. Both of the estimates suggest that there is an ample reservoir of gas to power active galactic nuclei in quiescent galaxies. This suggests that the lack of the AGN activity is due to the fact that the the accretion proceeds in a radiatively inefficient mode. 
 
-Previous studies used Chandra observations to show that the Bondi accretion power well-correlated with jet power \citep{AllenDunn+:2006a,Fujita+:2013a}. In these studies temperature, and density information are inferred from Chandra x-ray observations, while the jet power is inferred from the energy required to inflate observed bubbles within the x-ray emitting gas. 
+Previous studies used Chandra observations to show that the Bondi accretion power well-correlated with jet power \citep{AllenDunn+:2006a,FujitaKawakatu+:2014a}. In these studies temperature, and density information are inferred from Chandra x-ray observations, while the jet power is inferred from the energy required to inflate observed bubbles within the x-ray emitting gas. 
 
 However, this approach has limitations. Due to resolution issues it is almost never possible to observationally determine the gas density at the black sphere of influence, and such studies are forced to extrapolate observed gas temperatures and densities to smaller scales.  In fact, the temperature profile is assumed to be flat inside of the Bondi radius.  In reality, the cusp in the velocity dispersion near the SMBH, should cause a cusp in the gas temperature profile (assuming the kinetic energy of stellar winds is efficiently themalized in shocks). 
 %%AG-give sense of scale.
@@ -92,7 +91,7 @@ However, this approach has limitations. Due to resolution issues it is almost ne
 Another approach to constraining the gas density around an SMBH is to go from a stellar mass loss rate (motivated by observed stellar densities) to a steady-state gas profile. This approach was taken by \citealt{Quataert:2004a,De-ColleGuillochon+:2012a,ShcherbakovWong+:2014a}. 
 
 %In this study we perform hydrodynamic modeling to solve for the steady-state gas density, temperature and velocity profiles near the SMBH sphere of influence, for a sample of nearby, quiescent galaxies. We a adopt the model used by \cite{Quataert:2004a} for the galactic center: gas is supplied by stellar winds, which collide, shock heat, and thermalize.  
-We take the same approach. To the best of our knowledge a systematic study of the parameter space of central galaxy properties. Thus, we compute central density profiles for a broad sample of galaxies for \cite{WangMerritt:2004a}--henceforward \citetalias{WangMerritt:2004a}.  This allows us to determine to relate the central stellar properties (e.g. stellar density slope) to the central gas properties. 
+We take the same approach. To the best of our knowledge a systematic study of the parameter space of central galaxy properties. Thus, we compute central density profiles for a broad sample of galaxies from \citealt{WangMerritt:2004a}--henceforward \citetalias{WangMerritt:2004a}.  This allows us to relate the central stellar properties (e.g. the slope of the stellar density) to the central gas properties. 
 
 We also explore the effects of varying the heating rate on the flow structure. Typically an inflow outflow flow structure is established. The stellar ejecta inside of the stagnation radius ($\rs$) will be accreted, while that outside $\rs$ will be driven out with the outflow. The location of $\rs$ and hence the accretion rate is  quite sensitive to the assumed heating rate.  In fact, as the specific thermal energy of the ejects drops below the potential, an inflow is established out to the radius where the SNe Ia rate becomes comparable to the dynamical timescale, which for black holes smaller than 10$^8 \Msun$ is well outside the $\rsoi$ 
 %It turns out that in our models the mass accretion rate is coincidentally quite similar to the Bondi accretion rate.
@@ -112,7 +111,7 @@ We use the same model as \citealt{Quataert:2004a} to find a steady state gas den
 &\rho T \frac{ds}{dt}=q\left[\ke+\kew+\gammaf \cs \right]
 \end{align}
 
-These or similar equations have been solve many times in the literature (e.g. \citealt{HolzerAxelford1971a,Quataert:2004a,De-ColleGuillochon+:2012a,ShcherbakovWong+:2014a}). \citealt{ShcherbakovWong+:2014a} solves similar equation, with additional terms to account for thermal conduction and radiative cooling. However, we find that radiative cooling may be neglected for a large portion of our parameter space--\S~\ref{sec:cooling}.  Additionally thermal conduction may be cut off by magnetic field lines--\S~\ref{sec:conduction}
+These or similar equations have been solve many times in the literature (e.g. \citealt{HolzerAxford:1970a,Quataert:2004a,De-ColleGuillochon+:2012a,ShcherbakovWong+:2014a}). \citealt{ShcherbakovWong+:2014a} adds additional terms to account for thermal conduction and radiative cooling. However, we find that radiative cooling may be neglected for a large portion of our parameter space--\S~\ref{sec:cooling}.  Additionally thermal conduction may be cut off by magnetic field lines--\S~\ref{sec:conduction}
 
 $q$ represent the rate of injection of gas mass per unit volume, and is derived from the stellar density, $\rho_*$, using
 
@@ -216,10 +215,10 @@ Where the pre-factor on the right-hand side is valid for $\gamma=5/3$ and $\Gamm
 The Bondi accretion rate, $\dotMb$ is given by 
 
 \begin{align}
-\dotMb=4\pi \lambda r_b^2 \rho(r_b) v_{\rm ff}(r_b)
+\Mdotb=4\pi \lambda r_b^2 \rho(r_b) v_{\rm ff}(r_b)
 \end{align}
 
-where $rb=G M/\cs^2$.
+where $r_b=G M/c_s^2$.
 
 %%AG: I am not entirely comfortable with this approximation for the accretion rate. 
 In our model the accretion rate may be approximated as the mass enclosed with $\rs$ divided by the free-fall time.
@@ -236,13 +235,13 @@ From Equation~\ref{eq:stag_simple}
 \rs=\frac{7}{2}\frac{G \Mbh}{\vw^2}.
 \end{align}
 
-Where have set $n~1$.  At $\rs$ we have
+Where have set $n=1$.  At $\rs$ we have
 
 \begin{align}
 \kew=\frac{c_s^2}{\gamma-1}
 \end{align}
 
-Thus, $\cs(rs)\simeq \vw(\rs)$. This means that $\dot{M}$ in our model is quite close to the 
+Thus, $\cs(rs)\simeq \vw(\rs)$. This means that $\dot{M}$ in our model is quite close to \Mdotb
 
 
 %%AG-I still believe that one will not get an outflow without extra heating, but this statement apparently depends on the slope of the density profile...Perhaps some sort of stability arguments could be applied...perturbing density at constant pressure. What happens to the equation for HSE.
@@ -287,14 +286,17 @@ Although red giant winds dominate the mass budget, winds from main sequence star
 \item \emph{Type Ia SNe} Following \citealt{ShcherbakovWong+:2014a}, the energy injected per Ia SNe is 10$^{51}$ ergs, and the SNe rate is $\simeq 4 \times 10^{-14} \Msun^{-1}$ yr$^{-1}$.  Assuming that each SNe in 10$^{51}$ ergs and a mass injection rate (from stellar winds) of 10$^{-11} \Msun$  yr$^{-1}$, this leads to $\vwO\simeq 600$ km/s.  (Note one of our chosen values for $\vwO$ is 500 km/s).
 
 As noted in \citealt{ShcherbakovWong+:2014a}, it is not obvious whether or not the SNe energy injection treated as a constant throughout time and space, since the flow time-scale may be short compared to the time between successive SNe Ia...
-%Thornton and Benton...
+%AG-Thornton and http://arxiv.org/pdf/1402.6695v2.pdf...
+%AG-Case of no stagnation radius
 \item \emph{MS Pulsars} 
 \end{enumerate}
 
-\subsection{Mass accretion rate}
-For each of our solutions, we may calculate the accretion rate $\dot{M}$ onto the SMBH. We show $\Medd$ vs. $\Mbh$ as a function of black hole mass for our three  chosen values of the $\vwO$ (200 km/s, 500 km/s, and 1000 km/s). The results are shown in Figure~\ref{fig:mdot_mass}
 
-We find there is a trend of $\eddr$ increasing towards higher black hole masses. However, previous work  suggests a downsizing trend: for quiescent galaxies $L_X \sim \Mbh^\alpha$, where $\alpha\simeq 0.7-0.8$ \citep{Miller+:2013a}. If $L_X\sim\dot{M}^2$, this would suggest $\eddr\sim \Mbh^{-0.6}$. In contrast for fixed $\vwO$ and $\eta$ we obtain that $\eddr\sim \Mbh^{0.5-1}$. One possible solution is that $\eta$ decreases with $\Mbh$. $\dot{M}$ scales linearly with $\eta$, so we would need to have $\eta\sim \Mbh^{-1}$ to explain the observed downsizing trend.  
+\subsection{Mass accretion rate}
+For each of our solutions, we may calculate the accretion rate $\dot{M}$ onto the SMBH. We show $\Medd$ vs. $\Mbh$ as a function of black hole mass for our three  chosen values of the $\vwO$ (200 km/s, 500 km/s, and 1000 km/s). The results are shown in Figure~\ref{fig:mdot_mass}. 
+%%AG-Also want to go into the case of no stagnation radius 
+
+We find there is a trend of $\eddr$ increasing towards higher black hole masses. However, previous work  suggests a downsizing trend: for quiescent galaxies $L_X \sim \Mbh^\alpha$, where $\alpha\simeq 0.7-0.8$ \citep{MillerGallo+:2014a}. If $L_X\sim\dot{M}^2$, this would suggest $\eddr\sim \Mbh^{-0.6}$. In contrast for fixed $\vwO$ and $\eta$ we obtain that $\eddr\sim \Mbh^{0.5-1}$. One possible solution is that $\eta$ decreases with $\Mbh$. $\dot{M}$ scales linearly with $\eta$, so we would need to have $\eta\sim \Mbh^{-1}$ to explain the observed downsizing trend.  
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{mdot_mass.eps}
@@ -306,11 +308,13 @@ We find there is a trend of $\eddr$ increasing towards higher black hole masses.
 \subsection{Comparison with observations}
 \citealt{AllenDunn+:2006a} use Chandra x-ray observations to infer the temperature and density profiles for nine nearby x-ray luminous elliptical galaxies.  Five of the galaxies in their sample overlap with that in \citetalias{WangMerritt:2004a}. 
 
-We may compare our results for the $T$ and $\rho$ profiles of the overlapping galaxies, with those inferred from observations.  Note that we we have two free parameters ($\eta$ and $\vwO$ in our model and thus we can can always match $T$ and $\rho$ at least one point.  We generally find that $\vwO=500$ km/s (as would be expected from SNe Ia) gives rough agreement with the observed temperatures.  Thus, we choose $\vwO=500$ km/s.  We choose an $\eta$ so that our solution would be consistent with the observed density profiles. The comparison is shown in Figure~\ref{fig:allen_compare}.
+We may compare our results for the $T$ and $\rho$ profiles with those inferred from observations for the overlapping galaxies.  Note that we we have two free parameters ($\eta$ and $\vwO$ in our model and thus we can can always match $T$ and $\rho$ at least one point.  We generally find that $\vwO=500$ km/s (as would be expected from SNe Ia) gives rough agreement with the observed temperatures.  Thus, we choose $\vwO=500$ km/s.  We choose an $\eta$ so that our solution would be consistent with the observed density profiles. The comparison is shown in Figure~\ref{fig:allen_compare}.
+%%AG-The chosen properties, in particular eta may be summarized in a table.
 
 
 \begin{itemize}
-\item \emph{NGC4486} On scales of $\sim1$ kpc the density profile in \citealt{AllenDunn+:2006a}  is shallower than in our model. Our model has a break in the gas density at $\sim 300$ pc--near the location of the Nuker break radius for this galaxy at 560 pc. There is an observed break in the density, but on a scale of a few kpc.
+\item \emph{NGC4486} %eta=0.2
+On scales of $\sim1$ kpc the density profile in \citealt{AllenDunn+:2006a}  is shallower than in our model. Our model has a break in the gas density at $\sim 300$ pc--near the location of the Nuker break radius for this galaxy at 560 pc. There is an observed break in the density, but on a scale of a few kpc.
 
 In contrast to a naive extrapolation of the observed $T$ and $\rho$ to smaller scales, our models have $T$ and $\rho$ monotonically increasing towards the galactic center. The increase in $T$ is due to the increased velocity dispersion (and thus increased heating) towards the galactic center.
 \end{itemize}
@@ -318,7 +322,8 @@ In contrast to a naive extrapolation of the observed $T$ and $\rho$ to smaller s
 \begin{figure*}
 \includegraphics[width=\columnwidth]{T_compare.eps}
 \includegraphics[width=\columnwidth]{dens_compare.eps}
-\caption{\label{fig:allen_compare} Comparison to \citealt{AllenDunn+:2006a}}
+\caption{\label{fig:allen_compare} Comparison of $n_e$ and $T$ to the \citealt{AllenDunn+:2006a}}. 
+%%AG in the future we will have to be carfeful of the mean molecular weight.
 \end{figure*}
 
 
