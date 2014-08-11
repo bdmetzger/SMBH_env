@@ -295,7 +295,7 @@ We estimate the value of the $\vwO$ for different physical heating sources below
 
 Although red giant winds dominate the mass budget, winds from main sequence stars may make a significant contribution to the energy budget, with wind velocities $\sim 100-150$ km/s \citep{NaimanSoares-Furtado+:2013a}. 
 
-\item \emph{Type Ia SNe} Following \citealt{ShcherbakovWong+:2014a}, the energy injected per Ia SNe is $E_{\rm Ia}=10^{51}$ ergs, and the SNe rate is $R_{\rm Ia}\simeq 4 \times 10^{-14} \Msun^{-1}$ yr$^{-1}$. 
+\item \emph{Type Ia SNe} From he energy injected per Ia SNe, $E_{\rm Ia}d}$ ergs, and the SNe rate,  $R_{\rm Ia}
 
 \begin{align}
 e=R_{\rm Ia} E_{\rm Ia} \rhostar
@@ -307,12 +307,12 @@ Then from Equation~\ref{eq:vw_eff}
 \vwO=\sqrt{\frac{2 t_h R_{\rm Ia} E_{\rm Ia}}{\eta}}
 \end{align}
 
- Following \citealt{ShcherbakovWong+:2014a}, $E_{\rm Ia}=10^{51}$ ergs and $R_{\rm Ia}\simeq 4 \times 10^{-14} \Msun^{-1}$ yr$^{-1}$, which gives $eta\simeq 230 \eta^{-1/2}$ km/s (For $\eta=0.1$ this corresponds to $\vwO\simeq$ 500 km/s.   
+ Following \citealt{ShcherbakovWong+:2014a}, $E_{\rm Ia}=10^{51}$ ergs and $R_{\rm Ia}\simeq 4 \times 10^{-14} \Msun^{-1}$ yr$^{-1}$, which gives $\vwO\simeq 230 \, \eta^{-1/2}$ km/s (For $\eta=0.1$ this corresponds to $\vwO\simeq$ 500 km/s.   
  %Perhaps it would be best to adopt a fiducial eta=0.1--this may be more straightforward from the pov of both heating and cooling.
 
 As noted in \citealt{ShcherbakovWong+:2014a}, SNe energy injection cannot necessarily be treated as constant throughout  time and space, since the flow time-scale may be short compared to the time between successive SNe Ia.
 
-There will be some radius, $r_{\rm Ia}$, where the dynamical timescale of the flow becomes comparable to the time between successive Type Ia SNe.  If the stagnation radius of the flow is outside of $\rIa$ then SNes will provide a steady contribution to $\vwO$
+There will be some radius, $r_{\rm Ia}$, where the dynamical timescale of the flow becomes comparable to the time between successive Type Ia SNe.  If the stagnation radius ($\rs$) of the flow is outside of $\rIa$ then SNes will provide a steady contribution to $\vwO$
 
 The timescale between successive Type Ia SNes  is
 
@@ -332,6 +332,9 @@ Therefore,
  r_{\rm Ia} \sim G \Mstar_{\rm Ia}/\sigma^2 \sim 4 \sigma_{200}^{-1/2} \; {\rm pc}
 \end{align}
 
+...
+
+%%AG-Plot comparing stagnation radius and Ia radius for all profiles...I found this to be confusing/hard to explain.
 %AG-Thornton and http://arxiv.org/pdf/1402.6695v2.pdf...
 
 \item \emph{MS Pulsars} 
@@ -349,7 +352,7 @@ Then we may obtain the $\vwO$ from Equation~\ref{eq:vw_eff}. m
 
 There may be as many 30,000 MSPs in the Milky way, which would give  $n_{\rm msp}\simeq3 \times 10^{-41} $ MSPs g$^{-1}$. Even if we optimistically take $L_{\rm sd}\simeq 10^{35}$ ergs/s, and $\eta$=0.1, we would get $\vwO\simeq40$ km/s, which means heating by MSPs is negligible. 
 
-Note MSPs may also be dissociated in the galactic center...
+Also, MSPs may also be dissociated in the galactic center...
 %%Also low thermalization efficiency inferred in 47 Tuc by Naiman et al.
 \end{enumerate}
 
@@ -397,7 +400,7 @@ In contrast to a naive extrapolation of the observed $T$ and $\rho$ to smaller s
 \label{sec:cooling}
 In our models stellar winds collide, shock heat, and thermalize. The rate of energy injection (parameterized by $\vwO$) sets a characteristic temperature--see Equation~\ref{eq:tstag}.  For a given amount of injected mass, the energy input from shock heating should be equal to the enthalpy of the gas.
 
-In principle, the gas should radiatively cool as well--either from metal line cooling for $T\lsim 2\times 10^7$ K, or through free-free emission for $T\gsim 2\times 10^7$ K.  If the cooling rate is much smaller than the rate of energy injection then radiative cooling may be safely neglected.  
+The gas should radiatively cool as well--either from metal line cooling for $T\lsim 2\times 10^7$ K, or through free-free emission for $T\gsim 2\times 10^7$ K.  However, if the cooling rate is much smaller than the rate of energy injection then radiative cooling may be safely neglected.  
 
 For each of our solutions we compare the radiative cooling rate, $C$ to the heating rate $H=q \vw^2/2$. If $H/C \gg  1$ then cooling may be neglected. We take
 
@@ -424,9 +427,9 @@ Note $C\propto n^2\propto \eta^2$. On the other hand, $H \propto q  \propto \eta
 \caption{\label{fig:cooling} Ratio of heating ($H$) to cooling rate ($C$) for each of our solutions. The cooling rate is calculated using the approximate (solar metallicity) cooling function in Equation~\ref{eq:cooling}. The heating rate is estimated as $q \vw^2/2$. The ratio is computed assuming $eta=1$.}
 \end{figure}
 
-For $\vwO$=1000 km/s, it is apparent from Figure~\ref{fig:cooling}, that radiative cooling may be safely neglected. With a few exceptions this is also true for $\vwO$=500 km/s.  However, for $\vwO$=200 km/s cooling may be quite important. However, at smaller $\eta$ the effects of cooling will be less pronounced. For each of our galaxies we give the maximum $\eta$ such that $H/C >$1 in Table .  Roughly speaking, this is the maximum $\eta$ for which it would be safe to ignore cooling. $\eta$ depends on the age of the stellar population, and will realistically vary between $\sim 0.1$ and $\sim 1$.  
+For $\vwO$=1000 km/s, it is apparent from Figure~\ref{fig:cooling}, that radiative cooling may be safely neglected. With a few exceptions this is also true for $\vwO$=500 km/s.  However, for $\vwO$=200 km/s cooling may be quite important. For smaller $\eta$ the effects of cooling will be less pronounced. For each of our galaxies we give the maximum $\eta$ such that $H/C >$1 in Table .  Roughly speaking, this is the maximum $\eta$ for which it would be safe to ignore cooling. $\eta$ depends on the age of the stellar population, and will realistically vary between $\sim 0.1$ and $\sim 1$.  
 
-
+\input{figures/eta_tab.tex}
 
 \subsection{Conduction}
 \label{sec:conduction}{
