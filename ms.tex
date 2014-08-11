@@ -38,12 +38,14 @@
 \newcommand{\kb}{k_{\rm b}}
 \renewcommand{\mp}{m_{\rm p}}
 \newcommand{\Menc}{M_{\rm enc}}
-\newcommand{\Mstar}{M_{*}}
+\newcommand{\rhostar}{\rho_*}
+\newcommand{\Mstar}{M_{\star}}
 \newcommand{\Mbh}[1][]{M_{\bullet#1}}
 \newcommand{\phirs}{\frac{G \Menc}{\rs}}
 \newcommand{\soi}{\rm soi}
 \newcommand{\ff}{\rm ff}
 \newcommand{\rsoi}{r_{\soi}}
+\newcommand{\rIa}{r_{\rm Ia}}
 \newcommand{\sigsoi}{\sigma_{\soi}}
 \newcommand{\vwO}{v_{w,0}}
 \newcommand{\x}{\frac{r_s}{\rsoi}}
@@ -58,7 +60,7 @@ Columbia Astropysics Labratory, Columbia University, 550 West 120th Street, New 
 
 
 \begin{document}
-\title{Constraining Supermassive Black Hole Environments.}
+\title{Constraining Quiescent Supermassive Black Hole Environments.}
  \maketitle
 
 \begin{abstract}
@@ -80,7 +82,7 @@ if not all nearby galaxies (see reviews by, e.g. \citealt{KormendyRichstone:1995
 
 In order to understand why most galaxies appear to be inactive, it is necessary to understand the gas environment of black holes, as the gas density around the black hole sets its accretion rate.  The accretion rate in turn has implications for rate of black hole growth. 
 
-The gas environment also plays an important role in determining observables (light-curves, SEDs) from jetted tidal disruption events (TDEs). These are bright flares that occur when a star passes within the tidal disruption radius of the SMBH. A small fraction of such events are accompanied by the launch of a relativistic jet into the circumnuclear medium (CNM) of the host galaxy.  As the jet propagates into the CNM, a reverse shock propagates towards the back of the jet, decelerating it. The CNM density profile will determine the final Lorentz factor of the jet. This in turn will strongly affect the duration of the observed synchotron radiation. 
+The gas environment also plays an important role in determining observables (light-curves, SEDs) from jetted tidal disruption events (TDEs). These are bright flares that occur when a star passes within the tidal disruption radius of the SMBH. A small fraction of   events are accompanied by the launch of a relativistic jet into the circumnuclear medium (CNM) of the host galaxy.  As the jet propagates into the CNM, a reverse shock propagates towards the back of the jet, decelerating it. The CNM density profile will determine the final Lorentz factor of the jet. This in turn will strongly affect the duration of the observed synchotron radiation. 
 
 The gas in the vicinity of a black hole may come from several sources. \citealt{Ho:2009a} proposes three different mechanisms (1) Mass loss in winds (particularly from evolved stars) (2) Stellar-stellar collisions in dense environments (3) Tidal disruptions of stars. To estimate (a lower limit on the accretion rate), \citealt{Ho:2009a} calculates the Bondi accretion rate based on typical observed gas densities and temperatures taken from Chandra X-ray observations. A second estimate is obtained from the wind mass loss rate from the observed stellar densities. Both of the estimates suggest that there is an ample reservoir of gas to power active galactic nuclei in quiescent galaxies. This suggests that the lack of the AGN activity is due to the fact that the the accretion proceeds in a radiatively inefficient mode. 
 
@@ -94,7 +96,8 @@ Another approach to constraining the gas density around an SMBH is to go from a 
 %In this study we perform hydrodynamic modeling to solve for the steady-state gas density, temperature and velocity profiles near the SMBH sphere of influence, for a sample of nearby, quiescent galaxies. We a adopt the model used by \cite{Quataert:2004a} for the galactic center: gas is supplied by stellar winds, which collide, shock heat, and thermalize.  
 We take the same approach. To the best of our knowledge a systematic study of the parameter space of central galaxy properties. Thus, we compute central density profiles for a broad sample of galaxies from \citealt{WangMerritt:2004a}--henceforward \citetalias{WangMerritt:2004a}.  This allows us to relate the central stellar properties (e.g. the slope of the stellar density) to the central gas properties. 
 
-We also explore the effects of varying the heating rate on the flow structure. Typically an inflow outflow flow structure is established. The stellar ejecta inside of the stagnation radius ($\rs$) will be accreted, while that outside $\rs$ will be driven out with the outflow. The location of $\rs$ and hence the accretion rate is  quite sensitive to the assumed heating rate.  In fact, as the specific thermal energy of the ejects drops below the potential, an inflow is established out to the radius where the SNe Ia rate becomes comparable to the dynamical timescale, which for black holes smaller than 10$^8 \Msun$ is well outside the $\rsoi$ 
+We also explore the effects of varying the heating rate on the flow structure. Typically an inflow outflow flow structure is established. The stellar ejecta inside of the stagnation radius ($\rs$) will be accreted, while that outside $\rs$ will be driven out with the outflow. The location of $\rs$ and hence the accretion rate is  quite sensitive to the assumed heating rate.  
+%In fact, as the specific thermal energy of the ejects drops below the potential, an inflow is established out to the radius where the SNe Ia rate becomes comparable to the dynamical timescale, which for black holes smaller than 10$^8 \Msun$ is well outside the $\rsoi$ 
 %It turns out that in our models the mass accretion rate is coincidentally quite similar to the Bondi accretion rate.
 
  %%AG--say something about x-ray observations. 
@@ -234,6 +237,7 @@ From Equation~\ref{eq:stag_simple}
 
 \begin{align}
 \rs=\frac{7}{2}\frac{G \Mbh}{\vw^2}.
+\label{eq:rs_simple}
 \end{align}
 
 Where have set $n=1$.  At $\rs$ we have
@@ -245,7 +249,7 @@ Where have set $n=1$.  At $\rs$ we have
 Thus, $\cs(rs)\simeq \vw(\rs)$. This means that $\dot{M}$ in our model is quite close to $\Mdotb$
 
 
-%%AG-I still believe that one will not get an outflow without extra heating, but this statement apparently depends on the slope of the density profile...Perhaps some sort of stability arguments could be applied...perturbing density at constant pressure. What happens to the equation for HSE.
+%%AG-Apparently even in the low heating case, it is still possible to an outflow (from the analytic results above the gas density must be quite steep in this case). However, at low heating we will probably become subject to a cooling instablity.
 %%AG-I believe that in the case of core galaxy, the negative root of the quadratic should be taken...
 
 \subsection{Numerics: Full numerical solution for galaxy sample}
@@ -276,27 +280,86 @@ Middle Panel: Temperature; Bottom Panel: X-ray luminosity enclosed within radius
 
 \section{Discussion}
 \subsection{Heating}
-We now discuss potential sources of heating and discuss how different physical sources of heating would lead to different values of $\vwO$. For each heating source  from the specific heating rate $E$ we may estimate the corresponding $\vwO$...
+We now discuss potential sources of heating and discuss how different physical sources of heating would lead to different values of $\vwO$. For each heating source  from the heating rate per unit volume $e$ we may estimate the corresponding $\vwO$, using 
+
+\begin{align}
+&\frac{q \vwO^2}{2}=e\\
+&\frac{\eta \rhostar \vwO^2}{2 t_h}=e
+\label{eq:vw_eff}
+\end{align}
+
+We estimate the value of the $\vwO$ for different physical heating sources below.
 
 \begin{enumerate}
-\item \emph{Stellar winds} The contribution to the heating rate from the red giant winds themselves will be negligible, as red giants have wind velocities $\lsim 40$ km/s.
+\item \emph{Stellar winds} The contribution to the heating rate from the red giant winds themselves will be negligible, as red giants have wind velocities $\lsim 40$ km/s. 
 
 Although red giant winds dominate the mass budget, winds from main sequence stars may make a significant contribution to the energy budget, with wind velocities $\sim 100-150$ km/s \citep{NaimanSoares-Furtado+:2013a}. 
-%%Even assuming efficient thermalization wouldn't the contribution of main sequence winds be diluted by the fraction they take up of the mass budget.
 
-\item \emph{Type Ia SNe} Following \citealt{ShcherbakovWong+:2014a}, the energy injected per Ia SNe is 10$^{51}$ ergs, and the SNe rate is $\simeq 4 \times 10^{-14} \Msun^{-1}$ yr$^{-1}$.  Assuming that each SNe in 10$^{51}$ ergs and a mass injection rate (from stellar winds) of 10$^{-11} \Msun$  yr$^{-1}$, this leads to $\vwO\simeq 600$ km/s.  (Note one of our chosen values for $\vwO$ is 500 km/s).
+\item \emph{Type Ia SNe} Following \citealt{ShcherbakovWong+:2014a}, the energy injected per Ia SNe is $E_{\rm Ia}=10^{51}$ ergs, and the SNe rate is $R_{\rm Ia}\simeq 4 \times 10^{-14} \Msun^{-1}$ yr$^{-1}$. 
 
-As noted in \citealt{ShcherbakovWong+:2014a}, it is not obvious whether or not the SNe energy injection treated as a constant throughout time and space, since the flow time-scale may be short compared to the time between successive SNe Ia...
+\begin{align}
+e=R_{\rm Ia} E_{\rm Ia} \rhostar
+\end{align}
+
+Then from Equation~\ref{eq:vw_eff}
+
+\begin{align}
+\vwO=\sqrt{\frac{2 t_h R_{\rm Ia} E_{\rm Ia}}{\eta}}
+\end{align}
+
+ Following \citealt{ShcherbakovWong+:2014a}, $E_{\rm Ia}=10^{51}$ ergs and $R_{\rm Ia}\simeq 4 \times 10^{-14} \Msun^{-1}$ yr$^{-1}$, which gives $eta\simeq 230 \eta^{-1/2}$ km/s (For $\eta=0.1$ this corresponds to $\vwO\simeq$ 500 km/s.   
+ %Perhaps it would be best to adopt a fiducial eta=0.1--this may be more straightforward from the pov of both heating and cooling.
+
+As noted in \citealt{ShcherbakovWong+:2014a}, SNe energy injection cannot necessarily be treated as constant throughout  time and space, since the flow time-scale may be short compared to the time between successive SNe Ia.
+
+There will be some radius, $r_{\rm Ia}$, where the dynamical timescale of the flow becomes comparable to the time between successive Type Ia SNe.  If the stagnation radius of the flow is outside of $\rIa$ then SNes will provide a steady contribution to $\vwO$
+
+The timescale between successive Type Ia SNes  is
+
+\begin{align}
+t_{\rm Ia} \sim 2.5 \times 10^5  \Mstar_{,8}^{-1} \; {\rm yrs}.
+\end{align}
+
+The dynamical time is given
+
+\begin{align}
+ t_{\rm dyn} \sim r/\sigma \sim G M_\star/\sigma^3 \sim 5 \times 10^4 \Mstar_{,8} \sigma_{200}^{-3} \; {\rm yrs}.
+\end{align}
+
+Therefore,
+
+\begin{align}
+ r_{\rm Ia} \sim G \Mstar_{\rm Ia}/\sigma^2 \sim 4 \sigma_{200}^{-1/2} \; {\rm pc}
+\end{align}
+
 %AG-Thornton and http://arxiv.org/pdf/1402.6695v2.pdf...
-%AG-Case of no stagnation radius
+
 \item \emph{MS Pulsars} 
+The spin down power of millisecond pulsars (MSPs) could potentially be an important heating source. Assuming a spin-down luminosity $L_{\rm sd}$ and $n_{\rm msp}$ MSPs per unit mass 
+
+\begin{align}
+e=L_{\rm sd} n_{\rm msp} \rhostar.
+\end{align}
+
+Then we may obtain the $\vwO$ from Equation~\ref{eq:vw_eff}. m
+
+\begin{align}
+\vwO=\sqrt{\frac{2 t_h n_{\rm msp} L_{\rm sd}}{\eta}}
+\end{align}
+
+There may be as many 30,000 MSPs in the Milky way, which would give  $n_{\rm msp}\simeq3 \times 10^{-41} $ MSPs g$^{-1}$. Even if we optimistically take $L_{\rm sd}\simeq 10^{35}$ ergs/s, and $\eta$=0.1, we would get $\vwO\simeq40$ km/s, which means heating by MSPs is negligible. 
+
+Note MSPs may also be dissociated in the galactic center...
+%%Also low thermalization efficiency inferred in 47 Tuc by Naiman et al.
 \end{enumerate}
 
 
 \subsection{Mass accretion rate}
 For each of our solutions, we may calculate the accretion rate $\dot{M}$ onto the SMBH. We show $\Mdote$ vs. $\Mbh$ as a function of black hole mass for our three  chosen values of the $\vwO$ (200 km/s, 500 km/s, and 1000 km/s). The results are shown in Figure~\ref{fig:mdot_mass}.  Note that $\dot{M}\sim\vwO^{-2}$ for a cusp galaxy and $\dot{M}\sim\vwO^{-4}$ for a core galaxy. Thus, the mass accretion rate will be a sensitive function of the assumed heating rate.
-%%AG-Core galaxies might be a better choice to show the variations in the mass accretion rate 
-%%AG-Also want to go into the case of no stagnation radius 
+%%AG-The variation in accretion rate for w/ vw for core galaxies is comparable to that of cusp galaxies and belies the steep dependence stated above.
+%%AG-Note separation of cores and cusps (at vw=1000 km/s, where there are enough core galaxies for this comparison to be made). Also, note that the spread in core galaxies is far larger.
+
+The accretion rate is proportional to the stellar mass enclosed inside of $\rs$, so for core galaxies $\dot{M}\sim \Mbh (\rs/\rsoi)^{2}$, while for cusp galaxies $dot{M}\sim \Mbh (\rs/\rsoi)$.  This steeper dependence is enough to offset the tendency for core galaxies to have a larger $\rs/\rsoi$ for fixed $\eta$ (see Figure~\ref{fig:stag})Therefore, for $\rs/\rsoi<1$ core galaxies would have a smaller $\dot{M}$ than cusp galaxies.  For $\vwO=1000$ km/s, core galaxies have a smaller accretion rate for a given black hole mass.  
 
 We find there is a trend of $\eddr$ increasing towards higher black hole masses. However, previous work  suggests a downsizing trend: for quiescent galaxies $L_X \sim \Mbh^\alpha$, where $\alpha\simeq 0.7-0.8$ \citep{MillerGallo+:2014a}. If $L_X\sim\dot{M}^2$, this would suggest $\eddr\sim \Mbh^{-0.6}$. In contrast for fixed $\vwO$ and $\eta$ we obtain that $\eddr\sim \Mbh^{0.5-1}$. One possible solution is that $\eta$ decreases with $\Mbh$. $\dot{M}$ scales linearly with $\eta$, so we would need to have $\eta\sim \Mbh^{-1}$ to explain the observed downsizing trend.  
 
@@ -305,7 +368,7 @@ We find there is a trend of $\eddr$ increasing towards higher black hole masses.
 \caption{\label{fig:mdot_mass}$\eddr$ vs. $\Mbh$}
 \end{figure}
 
-%%AG: Split galaxies into cores (squares) and cusps (triangles). For cores only did those galaxies which had all three values of the wind velocity completed. Also want to include a plot of x-ray luminosity (less abstract than the mass accretion rate). 
+%%AG:  Also want to include a plot of x-ray luminosity (less abstract than the accretion rate). 
 
 \subsection{Comparison with observations}
 \citealt{AllenDunn+:2006a} use Chandra x-ray observations to infer the temperature and density profiles for nine nearby x-ray luminous elliptical galaxies.  Five of the galaxies in their sample overlap with that in \citetalias{WangMerritt:2004a}. 
@@ -332,6 +395,38 @@ In contrast to a naive extrapolation of the observed $T$ and $\rho$ to smaller s
  
 \subsection{Cooling}
 \label{sec:cooling}
+In our models stellar winds collide, shock heat, and thermalize. The rate of energy injection (parameterized by $\vwO$) sets a characteristic temperature--see Equation~\ref{eq:tstag}.  For a given amount of injected mass, the energy input from shock heating should be equal to the enthalpy of the gas.
+
+In principle, the gas should radiatively cool as well--either from metal line cooling for $T\lsim 2\times 10^7$ K, or through free-free emission for $T\gsim 2\times 10^7$ K.  If the cooling rate is much smaller than the rate of energy injection then radiative cooling may be safely neglected.  
+
+For each of our solutions we compare the radiative cooling rate, $C$ to the heating rate $H=q \vw^2/2$. If $H/C \gg  1$ then cooling may be neglected. We take
+
+\begin{align}
+c=\Lambda(T) n^2.
+\end{align}
+
+Where $n$ is the number density and $\Lambda(T)$ is the cooling function. We approximate $\Lambda(T)$ as piece-wise power law (fitted for solar metallicity--see Figure 34.1 in \cite{Draine:2011a})
+%cite Draine
+
+\[
+\Lambda(T)\simeq
+\begin{cases}
+    2.3 \times 10^{-24} \left(T/10^6 \text{K}\right)^{0.5} $erg cm$^3 $s$^{-1}& \text{if } T \gsim 2 \times 10^7 \text{K} \\
+    1.1 \times 10^{-22} \left(T/10^6 \text{K}\right)^{-0.7}  $erg cm$^3 $s$^{-1}}& \text{if } T \lsim 2 \times 10^7 \text{K}     
+\end{cases}
+\label{eq:cooling}
+\]
+
+Note $C\propto n^2\propto \eta^2$. On the other hand, $H \propto q  \propto \eta$. Thus, the ratio $H/C$ will depend upon the free parameter $\eta$. We plot $H/C$ for all of our profiles for our fiducial $\eta=1$. 
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{cooling.eps}
+\caption{\label{fig:cooling} Ratio of heating ($H$) to cooling rate ($C$) for each of our solutions. The cooling rate is calculated using the approximate (solar metallicity) cooling function in Equation~\ref{eq:cooling}. The heating rate is estimated as $q \vw^2/2$. The ratio is computed assuming $eta=1$.}
+\end{figure}
+
+For $\vwO$=1000 km/s, it is apparent from Figure~\ref{fig:cooling}, that radiative cooling may be safely neglected. With a few exceptions this is also true for $\vwO$=500 km/s.  However, for $\vwO$=200 km/s cooling may be quite important. However, at smaller $\eta$ the effects of cooling will be less pronounced. For each of our galaxies we give the maximum $\eta$ such that $H/C >$1 in Table .  Roughly speaking, this is the maximum $\eta$ for which it would be safe to ignore cooling. $\eta$ depends on the age of the stellar population, and will realistically vary between $\sim 0.1$ and $\sim 1$.  
+
+
 
 \subsection{Conduction}
 \label{sec:conduction}{
