@@ -48,6 +48,7 @@
 \newcommand{\rIa}{r_{\rm Ia}}
 \newcommand{\sigsoi}{\sigma_{\soi}}
 \newcommand{\vwO}{v_{w,0}}
+\newcommand{\kewO}{\frac{\vwO^2}{2}}
 \newcommand{\x}{\frac{r_s}{\rsoi}}
 \newcommand{\vwNorm}{\frac{\vwO}{\sigsoi}}
 \newcommand{\pyear}{{\rm yr}^{-1}}
@@ -178,7 +179,7 @@ Then multiplying Equation~\ref{eqn:HSE}  $\frac{1}{\gamma-1}$ and subtracting it
 From the above equation we may obtain an expression for the Stagnation point using L'Hopital's rule and Equation~\ref{eq:tstag}. To obtain an analytic expression, we take $\Mstar\sim r^{2-\Gamma}$
 
 \begin{align}
-&\kew n =A \phirs -B \frac{G \Mbh}{\rs}\\
+&\kewO n =A \phirs -B \frac{G \Mbh}{\rs}\\
 &A=\left[\frac{4\gamma-(\gamma-1)(1+\Gamma)}{4(\gamma-1)}\right]; \hspace{1cm} B=\frac{2-\Gamma}{4} \label{eq:stag_analytic}
 \end{align}
 
@@ -208,7 +209,7 @@ Consider the limit $\lim_{\eta \to 0}$, then for $\rs$ to exist we must have $3.
 When $\Mstar << \Mbh$ at the stagnation radius, the relationship between $\rs$ and $\vw$ is greatly simplified. 
 
 \begin{align}
-\kew=\frac{7}{4}\frac{G \Mbh}{n \rs}
+\kewO=\frac{7}{4}\frac{G \Mbh}{n \rs}
 \label{eq:stag_simple}
 \end{align}
 
@@ -236,7 +237,7 @@ Note that to within factors of order unity this is the same as Bondi formula, ex
 From Equation~\ref{eq:stag_simple}
 
 \begin{align}
-\rs=\frac{7}{2}\frac{G \Mbh}{\vw^2}.
+\rs=\frac{7}{2}\frac{G \Mbh}{\vwO^2}.
 \label{eq:rs_simple}
 \end{align}
 
@@ -246,7 +247,7 @@ Where have set $n=1$.  At $\rs$ we have
 \kew=\frac{c_s^2}{\gamma-1}
 \end{align}
 
-Thus, $\cs(rs)\simeq \vw(\rs)$. This means that $\dot{M}$ in our model is quite close to $\Mdotb$
+Thus, $\cs(\rs)\simeq \vw(\rs)$. This means that $\dot{M}$ in our model is quite close to $\Mdotb$
 
 
 %%AG-Apparently even in the low heating case, it is still possible to an outflow (from the analytic results above the gas density must be quite steep in this case). However, at low heating we will probably become subject to a cooling instablity.
@@ -295,6 +296,25 @@ We estimate the value of the $\vwO$ for different physical heating sources below
 
 Although red giant winds dominate the mass budget, winds from main sequence stars may make a significant contribution to the energy budget, with wind velocities $\sim 100-150$ km/s \citep{NaimanSoares-Furtado+:2013a}. 
 
+\item \emph{MS Pulsars} 
+The spin down power of millisecond pulsars (MSPs) could potentially be an important heating source. Assuming a spin-down luminosity $L_{\rm sd}$ and $n_{\rm msp}$ MSPs per unit mass 
+
+\begin{align}
+e=L_{\rm sd} n_{\rm msp} \rhostar.
+\end{align}
+
+Then we may obtain the $\vwO$ from Equation~\ref{eq:vw_eff}. m
+
+\begin{align}
+\vwO=\sqrt{\frac{2 t_h n_{\rm msp} L_{\rm sd}}{\eta}}
+\end{align}
+
+There may be as many 30,000 MSPs in the Milky way, which would give  $n_{\rm msp}\simeq3 \times 10^{-41} $ MSPs g$^{-1}$. Even if we optimistically take $L_{\rm sd}\simeq 10^{35}$ ergs/s, and $\eta$=0.1, we would get $\vwO\simeq40$ km/s, which means heating by MSPs is negligible. 
+
+Also, MSPs may also be dissociated in the galactic center...
+%%Also low thermalization efficiency inferred in 47 Tuc by Naiman et al.
+\end{enumerate}
+
 \item \emph{Type Ia SNe} From he energy injected per Ia SNe, $E_{\rm Ia}d}$ ergs, and the SNe rate,  $R_{\rm Ia}
 
 \begin{align}
@@ -332,30 +352,15 @@ Therefore,
  r_{\rm Ia} \sim G \Mstar_{\rm Ia}/\sigma^2 \sim 4 \sigma_{200}^{-1/2} \; {\rm pc}
 \end{align}
 
-...
+The stagnation radius scales linearly with $\Mbh$ (see Equation~\ref{eq:stag_simple}), while the $\rIa$ is roughly constant. For small $\Mbh$, $\rs$ is well inside $\rIa$ and SNes will not contribute to the $\vwO$.  Above $10^8 \Msun$ SNes will represent an important contribution to the overall heating. Thus, for $\Mbh=10^6 \MSun$, we may have $\vwO\simeq 100$ km/s with heating mostly coming from main sequence winds. On the other hand, for $\Mbh \gsim 10^8 \MSun$, we may have $\vwO\simeq 500$ km/s, with the main contribution coming from type Ia SNe. These two regimes are illustrated in Figure~\ref{fig:vw_eff}.
 
-%%AG-Plot comparing stagnation radius and Ia radius for all profiles...I found this to be confusing/hard to explain.
+\begin{figure}
+\includegraphics[width=\columnwidth]{vw_eff.eps}
+\caption{\label{fig:vw_eff} Top panel: $\vwO$ vs. $\Mbh/\Msun$ assuming $\vwO$=100 km/s (from main sequence winds) for $\rs/\rIa<1$ and $\vwO$=500 km/s (from type Ia SNes) for $\rs/\rIa>1$. Bottom panel: $\rs/\rIa$ vs. $\Mbh/\Msun$ using heating prescription above.}
+\end{figure}
+
+%AG-I am not comfortable saying type Ia SNe's don't contribute to heating for smaller mass BHs. If the cooling time for the SNe is long then it would be wrong to ignore the SNe contribution. The difference would be that the SNe heating would just be less steady.
 %AG-Thornton and http://arxiv.org/pdf/1402.6695v2.pdf...
-
-\item \emph{MS Pulsars} 
-The spin down power of millisecond pulsars (MSPs) could potentially be an important heating source. Assuming a spin-down luminosity $L_{\rm sd}$ and $n_{\rm msp}$ MSPs per unit mass 
-
-\begin{align}
-e=L_{\rm sd} n_{\rm msp} \rhostar.
-\end{align}
-
-Then we may obtain the $\vwO$ from Equation~\ref{eq:vw_eff}. m
-
-\begin{align}
-\vwO=\sqrt{\frac{2 t_h n_{\rm msp} L_{\rm sd}}{\eta}}
-\end{align}
-
-There may be as many 30,000 MSPs in the Milky way, which would give  $n_{\rm msp}\simeq3 \times 10^{-41} $ MSPs g$^{-1}$. Even if we optimistically take $L_{\rm sd}\simeq 10^{35}$ ergs/s, and $\eta$=0.1, we would get $\vwO\simeq40$ km/s, which means heating by MSPs is negligible. 
-
-Also, MSPs may also be dissociated in the galactic center...
-%%Also low thermalization efficiency inferred in 47 Tuc by Naiman et al.
-\end{enumerate}
-
 
 \subsection{Mass accretion rate}
 For each of our solutions, we may calculate the accretion rate $\dot{M}$ onto the SMBH. We show $\Mdote$ vs. $\Mbh$ as a function of black hole mass for our three  chosen values of the $\vwO$ (200 km/s, 500 km/s, and 1000 km/s). The results are shown in Figure~\ref{fig:mdot_mass}.  Note that $\dot{M}\sim\vwO^{-2}$ for a cusp galaxy and $\dot{M}\sim\vwO^{-4}$ for a core galaxy. Thus, the mass accretion rate will be a sensitive function of the assumed heating rate.
