@@ -40,6 +40,7 @@
 \newcommand{\Menc}{M_{\rm enc}}
 \newcommand{\rhostar}{\rho_*}
 \newcommand{\Mstar}{M_{\star}}
+\newcommand{\Mseight}{M_{\star,8}}
 \newcommand{\Mbh}[1][]{M_{\bullet#1}}
 \newcommand{\phirs}{\frac{G \Menc}{\rs}}
 \newcommand{\soi}{\rm soi}
@@ -105,9 +106,22 @@ We also explore the effects of varying the heating rate on the flow structure. T
 
 
 \section{Sample}
-Describe WM/Nuker sample here.
+We start with a sample of 61 galaxies from \citetalias{WangMerritt:2004a}, as subset of a larger sample of galaxies from \citealt{FaberTremaine+:1997a}. These are nearby elliptical galaxies, observed with the Hubble WFPC2.
+
+For each galaxy in the sample we take the surface brightness parameterization given in Table 1 of  \citetalias{WangMerritt:2004a}. The parameterization is a Nuker law
+
+\begin{equation}
+I(\xi)=I_b 2^{(\beta-\Gamma)/\alpha} \xi^{-\Gamma} (1+\xi^\alpha)^{-(\beta-\Gamma)/\alpha}, \xi=\frac{r}{r_b}.
+\end{equation}
+
+This is a broken power law which transitions from an inner power law slope, $\gamma$, to an outer power law slope, $\beta$, at a break radius, $\rb$. 
+
+From the surface brightness profile, we follow the same procedure as \citetalias{WangMerritt:2004a} to compute the spatial stellar density and stellar mass profile, both of which are used in our model. 
+
+%%AG--some discussion of alternate parameterizations.  My intuition is that for our purposes the parameterization should not matter. But some discussion of alternate possibilities could prevent Alistar Graham from yelling at us.
 
 \section{Model}
+\label{sec:model}
 We use the same model as \citealt{Quataert:2004a} to find a steady state gas density near the SMBH for each of the galaxies within our sample.  Gas is supplied by winds from the stellar population in the galactic center. Assuming a rate of mass injection, $q$, spherical symmetry and an ideal gas equation of state. 
 
 \begin{align}
@@ -313,9 +327,8 @@ There may be as many 30,000 MSPs in the Milky way, which would give  $n_{\rm msp
 
 Also, MSPs may also be dissociated in the galactic center...
 %%Also low thermalization efficiency inferred in 47 Tuc by Naiman et al.
-\end{enumerate}
 
-\item \emph{Type Ia SNe} From he energy injected per Ia SNe, $E_{\rm Ia}d}$ ergs, and the SNe rate,  $R_{\rm Ia}
+\item \emph{Type Ia SNe} From he energy injected per Ia SNe, $E_{\rm Ia}$, and the SNe rate,  $R_{\rm Ia}$
 
 \begin{align}
 e=R_{\rm Ia} E_{\rm Ia} \rhostar
@@ -332,27 +345,28 @@ Then from Equation~\ref{eq:vw_eff}
 
 As noted in \citealt{ShcherbakovWong+:2014a}, SNe energy injection cannot necessarily be treated as constant throughout  time and space, since the flow time-scale may be short compared to the time between successive SNe Ia.
 
-There will be some radius, $r_{\rm Ia}$, where the dynamical timescale of the flow becomes comparable to the time between successive Type Ia SNe.  If the stagnation radius ($\rs$) of the flow is outside of $\rIa$ then SNes will provide a steady contribution to $\vwO$
+There will be some radius, $\rIa$, where the dynamical timescale of the flow becomes comparable to the time between successive Type Ia SNe.  If the stagnation radius ($\rs$) of the flow is outside of $\rIa$ then SNes will provide a steady contribution to $\vwO$
 
 The timescale between successive Type Ia SNes  is
 
 \begin{align}
-t_{\rm Ia} \sim 2.5 \times 10^5  \Mstar_{,8}^{-1} \; {\rm yrs}.
+t_{\rm Ia} \sim 2.5 \times 10^5 \Mseight^{-1} \; {\rm yrs}.
 \end{align}
 
 The dynamical time is given
 
 \begin{align}
- t_{\rm dyn} \sim r/\sigma \sim G M_\star/\sigma^3 \sim 5 \times 10^4 \Mstar_{,8} \sigma_{200}^{-3} \; {\rm yrs}.
+ t_{\rm dyn} \sim r/\sigma \sim G \Mstar/\sigma^3 \sim 5 \times 10^4 \Mseight \sigma_{200}^{-3} \; {\rm yrs}.
 \end{align}
 
 Therefore,
 
 \begin{align}
- r_{\rm Ia} \sim G \Mstar_{\rm Ia}/\sigma^2 \sim 4 \sigma_{200}^{-1/2} \; {\rm pc}
+ r_{\rm Ia} \sim G \Mstar{}_{,\rm Ia}/\sigma^2 \sim 4 \sigma_{200}^{-1/2} \; {\rm pc}
 \end{align}
 
-The stagnation radius scales linearly with $\Mbh$ (see Equation~\ref{eq:stag_simple}), while the $\rIa$ is roughly constant. For small $\Mbh$, $\rs$ is well inside $\rIa$ and SNes will not contribute to the $\vwO$.  Above $10^8 \Msun$ SNes will represent an important contribution to the overall heating. Thus, for $\Mbh=10^6 \MSun$, we may have $\vwO\simeq 100$ km/s with heating mostly coming from main sequence winds. On the other hand, for $\Mbh \gsim 10^8 \MSun$, we may have $\vwO\simeq 500$ km/s, with the main contribution coming from type Ia SNe. These two regimes are illustrated in Figure~\ref{fig:vw_eff}.
+The stagnation radius scales linearly with $\Mbh$ (see Equation~\ref{eq:stag_simple}), while the $\rIa$ is roughly constant. For small $\Mbh$, $\rs$ is well inside $\rIa$ and SNes will not contribute to the $\vwO$.  Above $10^8 \Msun$ SNes will represent an important contribution to the overall heating. Thus, for $\Mbh=10^6 \Msun$, we may have $\vwO\simeq 100$ km/s with heating mostly coming from main sequence winds. On the other hand, for $\Mbh \gsim 10^8 \Msun$, we may have $\vwO\simeq 500$ km/s, with the main contribution coming from type Ia SNe. These two regimes are illustrated in Figure~\ref{fig:vw_eff}.
+\end{enumerate}
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{vw_eff.eps}
@@ -420,7 +434,7 @@ Where $n$ is the number density and $\Lambda(T)$ is the cooling function. We app
 \Lambda(T)\simeq
 \begin{cases}
     2.3 \times 10^{-24} \left(T/10^6 \text{K}\right)^{0.5} $erg cm$^3 $s$^{-1}& \text{if } T \gsim 2 \times 10^7 \text{K} \\
-    1.1 \times 10^{-22} \left(T/10^6 \text{K}\right)^{-0.7}  $erg cm$^3 $s$^{-1}}& \text{if } T \lsim 2 \times 10^7 \text{K}     
+    1.1 \times 10^{-22} \left(T/10^6 \text{K}\right)^{-0.7}  $erg cm$^3 $s$^{-1}& \text{if } T \lsim 2 \times 10^7 \text{K}     
 \end{cases}
 \label{eq:cooling}
 \]
