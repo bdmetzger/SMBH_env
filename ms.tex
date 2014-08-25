@@ -144,6 +144,44 @@ number will lie in the range $\sim$0.1-1. We adopt $\eta=1$. However, scaling $\
 
 $v_w^2/2$ encapsulates heating in our simulation. We take $v_w^2=\sqrt{\sigma(r)^2+v_{w,0}^2}$ where $\sigma(r)$ corresponds to the velocity dispersion of the stars and $v_{w,0}$ accounts for additional heating sources (ms pulsars, SNe Ia, etc.)  We approximate $\sigma(r)$ to be given by $G \Menc/r=G(\Mbh+\Mstar)/r$, where $\Mbh$ is the mass of the SMBH and $\Mstar$ is the stellar mass inside radius $r$. 
 
+{\bf NCS: here is some added detail about the role of stellar mass functions in the model}
+
+If we assume that a stellar population forms impulsively in the distant pass with IMF $\mu(m_*)$(with minimum mass $m_0$ and maximum mass $m_1$), then the surviving mass fraction at any future time $t$ is given by 
+\begin{equation}
+f(t) =\frac{ \int_{m_0}^{m_{\rm max}(t)} m_* \mu(m_*) dm_* }{ \int_{m_0}^{m_1} m_* \mu(m_*) dm_* },
+\end{equation}
+where 
+\begin{equation}
+m_{\rm max}(t) \approx 2.5M_\odot~ \left( \frac{t}{10^9~{\rm yr}} \right)^{-0.4}.
+\end{equation}
+For a Salpeter IMF $\mu(m_*) \propto m_*^{-2.35}$ with $m_0=0.1M_\odot$ and $m_1=100M_\odot$,
+\begin{equation}
+f_{\rm Sal}(t) = 1.098 - 0.490 \left(\frac{t}{10^{10}~{\rm yr}} \right)^{0.14}
+\end{equation}
+{\bf NCS: we should probably use a Kroupa/Chabrier IMF, but this gets the ball rolling.}
+If we approximate post-main sequence evolution as instantaneous and define $\lambda(m_*)$ as the fractional mass lost during all stages of stellar evolution, then the mass loss rate density
+\begin{equation}
+q(t) = \frac{\rho_*}{\bar{m}_*} \lambda(m_{\rm max}(t)) m_{\rm max}(t) \frac{df}{dt},
+\end{equation}
+where the mean stellar mass $\bar{m}_* = \int_{m_0}^{m_{\rm max}(t)} m_*\mu(m_*)dm_* \approx 0.3 M_\odot$.  Further approximating $\lambda(m_*)=0.5$, and using the Salpeter IMF once more, gives
+\begin{equation}
+q(t) = \frac{\rho_*}{10^{10}~{\rm yr}} \times 0.11 \left(\frac{t}{10^{10}~{\rm yr}} \right)^{-1.26}.
+\end{equation}
+This is a specific, time-dependent definition of $\eta(t) (=0.11(t/t_{\rm h})^{-1.26})$; if we consider different star formation scenarios (for example, continuous star formation) or different IMFs, it will change.  Once these free parameters are specified, however, we can answer an important question: do young stellar populations increase or decrease the SMBH feeding rate $\dot{M}$?  Clearly, $\eta(t)$ is larger for young stellar populations, but these stars also have high wind velocities that diminish the stagnation radius.  Crudely approximating $v_{\rm w}=200~{\rm km~s}$ for $m_{\rm max} < 10M_{\odot}$ and $v_{\rm w}=1000~{\rm km~s}$ for $m_{\rm max} > 10M_{\odot}$ (motivated by the transition from dust-driven wind loss on the AGB to line-driven wind loss on the main sequence), we can employ the relation $\dot{M} \propto \eta(t) r_{\rm s}^{2-\Gamma}\propto \eta(t) v_{\rm w}^{-4+2\Gamma}$ (where $\rho_* \propto r^{-\Gamma}$) to determine the impact of stellar ``youth'' on SMBH feeding rates.
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{NickPlot.eps}
+\caption{\label{NickPlot} SMBH feeding rates $\dot{M}=\eta(t) \times M_*(r_{\rm s})$, in arbitrary units.  The green, blue, and black curves are for galaxies with $\Gamma$ values of $0.1$, $0.5$, and $0.9$, respectively.  Solid curves represent impulsive-mode star formation, while dotted curves represent continuous-mode star formation.}
+\end{figure}
+
+In Fig. \ref{NickPlot} we plot $\dot{M}$, in arbitrary units, as a function of time, for three different stellar density profiles $\Gamma = \{1.1, 1.5, 1.9\}$ (which are normalized to have the same mass at an influence radius $r_{\rm soi}=10~{\rm pc}$ around a $10^7M_\odot$ SMBH).  We parametrize the wind velocity as 
+\begin{equation}
+\frac{v_{\rm w}}{\rm km~s^{-1}}=600-400\tanh\left( \frac{t-10^{7.5}~{\rm yr}}{10^{7}~{\rm yr}}\right).
+\end{equation}
+The ``impulsive burst'' mode of star formation produces large ($\sim 10$) differences between the three $\dot{M}$ curves at early times, when $r_{\rm s}$ is small, but smaller ($\sim 3$) differences at late times, when $r_{\rm s}$ is large.  We also plot, as dotted curves, a simple model for the ``continuous'' mode of star formation, where mass loss is calculated as $\bar{\eta} = \int\eta(t)dt/t_{\rm h} \approx 4$ and an average energy injection in the wind is calculated as $\bar{v_{\rm w}^2}=\int\eta(t)v_{\rm w}^2(t)dt/\bar{\eta} \approx (800~{\rm km~s}^{-1})^2$.  Interestingly, the continuous mode of star formation produces small differences from late-time $\dot{M}$ seen in cusp galaxies with impulsive star formation; however, continuous mode star formation decreases late-time $\dot{M}$ by an order of magnitude relative to impulsive star formation in core galaxies.
+
+
+
 \section{Solutions}
 \subsection{Analytics: Location of Stagnation Radius}
 It is possible to derive an analytic expression for the steady-state stagnation radius, $\rs$, in terms of $v_w$ and the power law slope of the density at $\rs$.
