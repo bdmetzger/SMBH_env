@@ -1,0 +1,79 @@
+It is possible to derive an analytic expression for the steady-state stagnation radius, $\rs$, in terms of $v_w$ and the power law slope of the density at $\rs$.  Consider the steady-state entropy equation.
+
+\begin{align}
+&\rho T v \dsdr=\Q\\
+&\dsdr=\frac{\Q}{\rho T v} \label{eq:ss_entropy}
+\end{align}
+
+t $\rs$, the velocity, $v$ goes to zero.  Therefore, the numerator must also go to 0. This implies that the  temperature at the $\rs$ is given by
+
+\begin{align}
+ &\frac{\kb T}{\mu \mp}=\gammafi \kew 
+\end{align}
+
+From the first law of thermodynamics 
+
+\begin{align}
+T\dsdr&=\ddr{u}+p\ddr{(1/\rho)}\\
+&=\frac{1}{\gamma-1}\ddr{(p/\rho)}-\frac{p}{\rho^2}\ddr{\rho}\\
+&=\frac{1}{\gamma-1}\ddr{(p/\rho)}-\frac{p}{\rho} \underbrace{\dxdy{\log{\rho}}{\log{r}}}_{-n} \label{eq:first_law}
+\end{align}
+
+Combining Equation~\ref{eq:first_law} and Equation~\ref{eq:ss_entropy}, one obtains.
+
+\begin{align}
+\frac{1}{\gamma-1}\ddr{(p/\rho)}+r n \cs=\frac{\Q}{\rho  v} \label{eqn:combo1}
+\end{align}
+
+At the stagnation point we also have (from the momentum equation)
+
+\begin{align}
+&\frac{1}{\rho}\dpdr=-\dphidr\\
+&\ddr{(p/\rho)}-r n \cs=-\dphidr \label{eqn:HSE}
+\end{align}
+
+Then multiplying Equation~\ref{eqn:HSE}  $\frac{1}{\gamma-1}$ and subtracting it from Equation~\ref{eqn:combo1} we obtain
+
+\begin{align}
+\gammaf r n \cs = \frac{1}{\gamma-1} \dphidr + \frac{\Q}{\rho  v}
+\end{align}
+
+From the above equation we may obtain an expression for the Stagnation point using L'Hopital's rule and Equation~\ref{eq:tstag}. To obtain an analytic expression, we take $\Mstar\sim r^{2-\Gamma}$
+
+\begin{align}
+&\kewO n =A \phirs -B \frac{G \Mbh}{\rs}\\
+&A=\left[\frac{4\gamma-(\gamma-1)(1+\Gamma)}{4(\gamma-1)}\right]; \hspace{1cm} B=\frac{2-\Gamma}{4} 
+\end{align}
+
+Note that in the above expression $\Mstar$ is evaluated at the stagnation radius. Let $\omega=\Mstar(\rs)/\Mbh$ and 
+$\eta=v_{w,0}/\sigma_{\rm soi}$. We may re-parameterize this relationship as follows:
+
+\begin{align}
+\x=\frac{1}{\eta^2 n}\left[ (1+\omega)\left(A-\frac{n}{2}\right)-B\right]
+\end{align}
+
+Note that in general $\omega$ is an implicit function of $x$. Cusp galaxies have $\Gamma\simeq1$.  Then $\omega=x$. With $\gamma=5/3$, $A=2$ and $B=1/4$.  Then:
+
+\begin{align}
+\x=\frac{7-2n}{2\eta^2 n+2n-8}
+\end{align}
+
+Consider the limit $\lim_{\eta \to 0}$ (the extra heating $\vwO$ goes to 0. Then we will get a negative value for the stagnation radius unless the gas density profile is quite steep at the $\rs$: $3.5<n<4$...
+
+In contrast for a core galaxy we will have $\Gamma\simeq0, A=9/4, B=1/2$, and  $\omega=x^2$. Thus we will have a quadratic equation for stagnation radius, which gives
+
+\begin{align}
+\x=\frac{\eta^2 n \pm \sqrt{\eta^4 n^2 -4 \left(\frac{9}{4}-\frac{n}{2}\right) \left(\frac{7}{4}-\frac{n}{2}\right)}}{2\left(\frac{9}{4}-\frac{n}{2}\right)}
+\end{align}
+
+Consider the limit $\lim_{\eta \to 0}$, then for $\rs$ to exist we must have $3.5<n<4.5$.
+
+When $\Mstar << \Mbh$ at the stagnation radius, the relationship between $\rs$ and $\vw$ is greatly simplified. 
+
+\begin{align}
+\kewO=\frac{7}{4}\frac{G \Mbh}{n \rs}
+\end{align}
+
+Where the pre-factor on the right-hand side is valid for $\gamma=5/3$ and $\Gamma=1$ or 0.  
+
+

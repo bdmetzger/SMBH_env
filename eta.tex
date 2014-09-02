@@ -1,0 +1,24 @@
+We now describe the rate of start formation $q$ varies with the age of the stellar population.
+
+If we assume that a stellar population forms impulsively in the distant pass with IMF $\mu(m_*)$(with minimum mass $m_0$ and maximum mass $m_1$), then the surviving mass fraction at any future time $t$ is given by 
+\begin{equation}
+f(t) =\frac{ \int_{m_0}^{m_{\rm max}(t)} m_* \mu(m_*) dm_* }{ \int_{m_0}^{m_1} m_* \mu(m_*) dm_* },
+\end{equation}
+where 
+\begin{equation}
+m_{\rm max}(t) \approx 2.5M_\odot~ \left( \frac{t}{10^9~{\rm yr}} \right)^{-0.4}.
+\end{equation}
+For a Salpeter IMF $\mu(m_*) \propto m_*^{-2.35}$ with $m_0=0.1M_\odot$ and $m_1=100M_\odot$,
+\begin{equation}
+f_{\rm Sal}(t) = 1.098 - 0.490 \left(\frac{t}{10^{10}~{\rm yr}} \right)^{0.14}
+\end{equation}
+%{\bf NCS: we should probably use a Kroupa/Chabrier IMF, but this gets the ball rolling.}
+If we approximate post-main sequence evolution as instantaneous and define $\lambda(m_*)$ as the fractional mass lost during all stages of stellar evolution, then the mass loss rate density
+\begin{equation}
+q(t) = \frac{\rho_*}{\bar{m}_*} \lambda(m_{\rm max}(t)) m_{\rm max}(t) \frac{df}{dt},
+\end{equation}
+where the mean stellar mass $\bar{m}_* = \int_{m_0}^{m_{\rm max}(t)} m_*\mu(m_*)dm_* \approx 0.3 M_\odot$.  Further approximating $\lambda(m_*)=0.5$, and using the Salpeter IMF once more, gives
+\begin{equation}
+q(t) = \frac{\rho_*}{\th} \times 0.11 \left(\frac{t}{10^{10}~{\rm yr}} \right)^{-1.26}.
+\end{equation}
+This is a specific, time-dependent definition of $\eta(t) (=0.11(t/t_{\rm h})^{-1.26})$;
