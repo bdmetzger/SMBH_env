@@ -21,6 +21,10 @@
         \raise1pt\hbox{$>$}}}
 \newcommand{\rs}{r_s}
 \newcommand{\rb}{r_b}
+\newcommand{\rcirc}{r_{\rm circ}}
+\newcommand{\rss}{r_{\rm ss}}
+\newcommand{\lrs}{\l_{\rs}}
+\newcommand{\lambdars}{\lambda_{\rs}}
 \newcommand{\vw}{v_w}
 
 \newcommand{\dxdy}[2]{\frac{\partial #1}{\partial #2} }
@@ -346,7 +350,7 @@ This relationship will hold as long as $\vw > \sigma(\rsoi)$, or equivalently (f
 $\Mdot$ flowing towards the hole is given by
 
 \begin{align}
-\dot{M}=\frac{\eta \Menc(\rs)}{\rs}
+\dot{M}=\frac{\eta \Menc(\rs)}{\th}
 \end{align}
 
 In physical units this may be approximated as 
@@ -712,14 +716,14 @@ function. We approximate $\Lambda(T)$ as piece-wise power law (fitted
 for solar metallicity--see Figure 34.1 in \cite{Draine:2011a})
 %cite Draine
 
-\[
+\begin{align}
 \Lambda(T)\simeq
 \begin{cases}
     2.3 \times 10^{-24} \left(T/10^6 \text{K}\right)^{0.5} $erg cm$^3 $s$^{-1}& \text{if } T \gsim 2 \times 10^7 \text{K} \\
     1.1 \times 10^{-22} \left(T/10^6 \text{K}\right)^{-0.7}  $erg cm$^3 $s$^{-1}& \text{if } T \lsim 2 \times 10^7 \text{K}     
 \end{cases}
 \label{eq:cooling}
-\]
+\end{align}
 
 Note $C\propto n^2\propto \eta^2$. On the other hand, $H \propto q
 \propto \eta$. Thus, the ratio $H/C$ will depend upon the free
@@ -728,7 +732,7 @@ fiducial $\eta=1$.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{cooling.eps}
-\caption{\label{fig:cooling} Ratio of heating ($H$) to cooling rate ($C$) for each of our solutions. The cooling rate is calculated using the approximate (solar metallicity) cooling function in Equation~\ref{eq:cooling}. The heating rate is estimated as $q \vw^2/2$. The ratio is computed assuming $eta=1$.}
+\caption{\label{fig:cooling} Ratio of heating ($H$) to cooling rate ($C$) for each of our solutions. The cooling rate is calculated using the approximate (solar metallicity) cooling function in Equation~\ref{eq:cooling}. The heating rate is estimated as $q \vw^2/2$. The ratio is computed assuming $\eta=1$.}
 \end{figure}
 
 For $\vwO$=1000 km/s, it is apparent from Figure~\ref{fig:cooling},
@@ -754,7 +758,40 @@ our profiles and should be included.
 \label{sec:conduction}{
 
 \subsection{Angular Momentum}
+\label{sec:ang}
+Our models are spherically symmetric and do not include the effects of
+the gas' angular momentum. However, galaxies will in general have some
+net rotation, and the gas will generally have some non-zero angular
+momentum. At some radius, $\rcirc$, the specific angular momentum of
+the gas will equal the specific angular momentum of a circular
+orbit. Inside of this radius our assumptions of no rotation and
+spherical symmetry will break down. But if $\rcirc$ inner sonic point
+of the flow, the region where angular momentum becomes important will
+be causally disconnected from the rest of the flow, and we would be
+justified in neglecting angular momentum (at least on large scales). 
 
+The inner sonic point, $\rss$ general occurs at $\simq 1\%$ of
+$\rinf$. $\rcirc$ depends on the gas injection radius. The largest
+injection radius is $\rs$. Let $\lrs$ be the gas specific angular
+momentum at $\rs$, then 
+
+\begin{align}
+\rcirc=\frac{\lrs}{G \Mbh}
+\end{align}
+
+ used two-dimensional kinematic data to measure the ratio of ordered
+ to random motion in a sample of early type galaxies. More precisely,
+ they measure 
+
+\begin{align}
+\lambda_R=\frac{\left<R|V|\right>}{\lef<R\sqrt{V^2+\sigma^2}\right>}
+\end{align}
+
+Where $R$ is the distance is the distance from the galactic center, $V$ is
+the mean stellar velocity, and $\sigma$ is the velocity
+disperison. The brackets represent a luminosity weighted average.
+
+$\lrs\simeq\lambdars \sigma(\rs)^2 \rs^2$ 
 \section{Summary}
 
 \appendix
