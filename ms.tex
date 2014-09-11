@@ -7,8 +7,10 @@
 \usepackage{url}
 \usepackage{aas_macros}
 \usepackage{astro}
-%\usepackage{natbib}
+% \usepackage{natbib}
 
+% \renewcommand{\l}{\left}
+% \renewcommand{\r}{\right}
 
 \newcommand{\Mdot}{\dot{M}}
 \newcommand{\eddr}{\dot{M}/\dot{M}_{\rm Edd}}
@@ -16,9 +18,9 @@
 \newcommand{\Mdotb}{\dot{M}_{\rm bondi}}
 
 \newcommand\lsim{\mathrel{\rlap{\lower4pt\hbox{\hskip1pt$\sim$}}
-        \raise1pt\hbox{$<$}}}
+    \raise1pt\hbox{$<$}}}
 \newcommand\gsim{\mathrel{\rlap{\lower4pt\hbox{\hskip1pt$\sim$}}
-        \raise1pt\hbox{$>$}}}
+    \raise1pt\hbox{$>$}}}
 \newcommand{\rs}{r_s}
 \newcommand{\rb}{r_b}
 \newcommand{\rcirc}{r_{\rm circ}}
@@ -53,7 +55,7 @@
 \newcommand{\Mseight}{M_{\star,8}}
 \newcommand{\Mbh}[1][]{M_{\bullet#1}}
 \newcommand{\Mbheight}{M_{\bullet,8}}
-\newcommand{\MbhNorm}{\frac{\Mbh}{10^8 \Msun}}
+\newcommand{\MbheightExp}{\frac{\Mbh}{10^8 \Msun}}
 
 \newcommand{\phirs}{\frac{G \Menc}{\rs}}
 \newcommand{\soi}{\rm soi}
@@ -78,26 +80,26 @@
 \defcitealias{WangMerritt:2004a}{WM04}	
 
 \author[Generozov, Metzger, \& Stone]{Aleksey Generozov$\thanks{E-mail: ag@astro.columbia.edu}$, Brian~D.~Metzger, Nicholas Stone\\
-Columbia Astropysics Labratory, Columbia University, 550 West 120th Street, New York, NY 10027}
+  Columbia Astropysics Labratory, Columbia University, 550 West 120th Street, New York, NY 10027}
 
 
 \begin{document}
 \title{Constraining Quiescent Supermassive Black Hole Environments.}
- \maketitle
+\maketitle
 
 \begin{abstract}
-Abstract here 
+  Abstract here 
 \end{abstract}
 
- \begin{keywords}
- black hole physics --  galaxies: active
- \end{keywords}
+\begin{keywords}
+  black hole physics --  galaxies: active
+\end{keywords}
 
 
 \section{Introduction}
 \label{sec:introduction}
 
-%%Maybe active galaxies constitute 10% need reference here?
+%% Maybe active galaxies constitute 10% need reference here?
 Supermassive black holes (SMBHs) are present in the centers of most,
 if not all nearby galaxies (see reviews by,
 e.g. \citealt{KormendyRichstone:1995a};
@@ -109,7 +111,7 @@ In order to understand why most galaxies appear to be inactive, it is
 necessary to understand the gas environment of black holes, as the gas
 density around the black hole sets its accretion rate.  The accretion
 rate also has implications for rate of black hole growth.
-%AG:Perhaps need more detail here.
+% AG:Perhaps need more detail here.
 
 Constraints on the SMBH accretion rates at the low end of the SMBH
 mass function also have implications for the black occupation
@@ -120,7 +122,7 @@ constrain the BH occupation fraction.  However, they extrapolate
 detection threshold.  However, it is possible that the $L_x$-$\Mbh$
 relationship steepens at smaller $\Mbh$, and thus the black hole
 occupation fraction could be underestimated at low $\Mbh$.
-%AG: In our model we obtain a steeper relationship, but we have difficulty matching the observed relationship above the detection threshold
+% AG: In our model we obtain a steeper relationship, but we have difficulty matching the observed relationship above the detection threshold
 
 The gas environment also plays an important role in determining
 observables (light-curves, SEDs) from jetted tidal disruption events
@@ -161,9 +163,9 @@ extrapolate observed gas temperatures and densities to smaller scales.
 In fact, the temperature profile is assumed to be flat inside of the
 Bondi radius.  In reality, the cusp in the velocity dispersion near
 the SMBH, should cause a cusp in the gas temperature profile (assuming
-the kinetic energy of stellar winds is efficiently themalized in
+the kinetic energy of stellar winds is efficiently thermalized in
 shocks).
-%%AG-give sense of scale.
+%% AG-give sense of scale.
 
 Another approach to constraining the gas density around an SMBH is to
 go from a stellar mass loss rate (motivated by observed stellar
@@ -215,7 +217,7 @@ in \citealt{MillerGallo+:2014a}. In performing these comparisons we
 hope to determine how well the gas environments of quiescent galaxies
 may be understood using the relatively well understood physics of
 stellar winds and supernova heating.
- %%AG--say something about x-ray observations. 
+%% AG--say something about x-ray observations. 
 
 
 \section{Sample}
@@ -242,7 +244,7 @@ radius, $\rb$.  The corresponding (spherically symmetric) stellar
 density, $\rhostar\sim r^{-1-\gamma}$ for $r \ll \rb$ and
 $\rhostar\sim r^{-1-\beta}$ for $r \ll \rb$.  $\gamma\simeq1$ for cusp
 galaxies, while $\gamma\simeq0$ for core galaxies.
-%AG:Is there a systematic dependence of beta on galaxy type$.
+% AG:Is there a systematic dependence of beta on galaxy type$.
 
 From the surface brightness profile, we follow the same procedure as
 \citetalias{WangMerritt:2004a} to compute the spatial stellar density
@@ -258,14 +260,27 @@ and stellar mass profile, both of which are used in our model.
 We use the same model as \citealt{Quataert:2004a} to find a steady
 state gas density near the SMBH for each of the galaxies within our
 sample.  Gas is supplied by winds from the stellar population in the
-galactic center. Assuming a rate of mass injection, $q$, spherical
-symmetry and an ideal gas equation of state.
+galactic center. The equation we solve are 
+
 
 \begin{align}
-&\drhodt+\frac{1}{r^2}\dxdy{\rho r^2 v}{r}=q\\
-&\rho \frac{dv}{dt}=-\dpdr-\rho \dphidr-q v\\
-&\rho T \frac{ds}{dt}=q\left[\ke+\kew+\gammaf \cs \right]
+  &\drhodt+\frac{1}{r^2}\dxdy{\rho r^2 v}{r}=q\\
+  &\rho \frac{dv}{dt}=-\dpdr-\rho \dphidr-q v\\
+  &\rho T \frac{ds}{dt}=q\left[\ke+\kew+\gammaf \cs \right].
 \end{align}
+
+Note that we assume spherical symmetry, an ideal gas equation of
+state, and rate of mass injection $q$. $q$ is related to related to
+the stellar density $\rhostar$ via
+
+\begin{align}
+  q=\frac{\eta \rho_*}{\th}.
+\end{align}
+
+%% AG $eta/th$ is the specific of rate of mass return to the ISM.  Ciotti et al. 1991 -- see in particular Table 2. 
+Where $t_h$ is the Hubble time, and $\eta$ is an efficiency parameter--for a stellar population between 2-15 Gyr old, this number will lie in the range $\sim$0.1-1 (see Appendix~\ref{app:eta}). We adopt $\eta=1$. However, scaling $\eta$ by some factor, would simply scale the $\rho$ by the same factor and otherwise leave the solution unchanged. 
+
+$\vw^2/2$ encapsulates heating in our simulation. We take $\vw^2=\sqrt{\sigma(r)^2+v_{w,0}^2}$ where $\sigma(r)$ corresponds to the velocity dispersion of the stars and $v_{w,0}$ accounts for additional heating sources (ms pulsars, SNe Ia, etc.)  We approximate $\sigma(r)$ to be given by $G \Menc/r=G(\Mbh+\Mstar)/r$, where $\Mbh$ is the mass of the SMBH and $\Mstar$ is the stellar mass inside radius $r$. 
 
 These or similar equations have been solve many times in the
 literature (e.g. \citealt{HolzerAxford:1970a,Quataert:2004a,De-ColleGuillochon+:2012a,ShcherbakovWong+:2014a}). \citealt{ShcherbakovWong+:2014a}
@@ -275,116 +290,85 @@ a large portion of our parameter space--\S~\ref{sec:cooling}.
 Additionally thermal conduction may be cut off by magnetic field
 lines--\S~\ref{sec:conduction}
 
-$q$ represent the rate of injection of gas mass per unit volume, and
-is derived from the stellar density, $\rho_*$, using
-
-\begin{align}
-q=\frac{\eta \rho_*}{t_h}
-\end{align}
-
-%%AG $eta/th$ is the specific of rate of mass return to the ISM.  Ciotti et al. 1991 -- see in particular Table 2. 
-Where $t_h$ is the Hubble time, and $\eta$ is an efficiency parameter--for a stellar population between 2-15 Gyr old, this number will lie in the range $\sim$0.1-1 (see Appendix~\ref{app:eta}). We adopt $\eta=1$. However, scaling $\eta$ by some factor, would simply scale the $\rho$ by the same factor and otherwise leave the solution unchanged. 
-
-$\vw^2/2$ encapsulates heating in our simulation. We take $\vw^2=\sqrt{\sigma(r)^2+v_{w,0}^2}$ where $\sigma(r)$ corresponds to the velocity dispersion of the stars and $v_{w,0}$ accounts for additional heating sources (ms pulsars, SNe Ia, etc.)  We approximate $\sigma(r)$ to be given by $G \Menc/r=G(\Mbh+\Mstar)/r$, where $\Mbh$ is the mass of the SMBH and $\Mstar$ is the stellar mass inside radius $r$. 
-
-% {\bf NCS: here is some added detail about the role of stellar mass
-% functions in the model}
-
-% if we consider different star formation scenarios (for example,
-% continuous star formation) or different IMFs, it will change.  Once
-% these free parameters are specified, however, we can answer an
-% important question: do young stellar populations increase or
-% decrease the SMBH feeding rate $\dot{M}$?  Clearly, $\eta(t)$ is
-% larger for young stellar populations, but these stars also have high
-% wind velocities that diminish the stagnation radius.  Crudely
-% approximating $v_{\rm w}=200~{\rm km~s}$ for $m_{\rm max} <
-% 10M_{\odot}$ and $v_{\rm w}=1000~{\rm km~s}$ for $m_{\rm max} >
-% 10M_{\odot}$ (motivated by the transition from dust-driven wind loss
-% on the AGB to line-driven wind loss on the main sequence), we can
-% employ the relation $\dot{M} \propto \eta(t) r_{\rm
-% s}^{2-\Gamma}\propto \eta(t) v_{\rm w}^{-4+2\Gamma}$ (where $\rho_*
-% \propto r^{-\Gamma}$) to determine the impact of stellar ``youth''
-% on SMBH feeding rates.
-%
-%\begin{figure}
-%\includegraphics[width=\columnwidth]{NickPlot.eps}
-%\caption{\label{NickPlot} SMBH feeding rates $\dot{M}=\eta(t) \times M_*(r_{\rm s})$, in arbitrary units.  The green, blue, and black curves are for galaxies with $\Gamma$ values of $0.1$, $0.5$, and $0.9$, respectively.  Solid curves represent impulsive-mode star formation, while dotted curves represent continuous-mode star formation.}
-%\end{figure}
-%
-%%In Fig. \ref{NickPlot} we plot $\dot{M}$, in arbitrary units, as a function of time, for three different stellar density profiles $\Gamma = \{1.1, 1.5, 1.9\}$ (which are normalized to have the same mass at an influence radius $r_{\rm soi}=10~{\rm pc}$ around a $10^7M_\odot$ SMBH).  We parametrize the wind velocity as 
-%\begin{equation}
-%\frac{v_{\rm w}}{\rm km~s^{-1}}=600-400\tanh\left( \frac{t-10^{7.5}~{\rm yr}}{10^{7}~{\rm yr}}\right).
-%\end{equation}
-%The ``impulsive burst'' mode of star formation produces large ($\sim 10$) differences between the three $\dot{M}$ curves at early times, when $r_{\rm s}$ is small, but smaller ($\sim 3$) differences at late times, when $r_{\rm s}$ is large.  We also plot, as dotted curves, a simple model for the ``continuous'' mode of star formation, where mass loss is calculated as $\bar{\eta} = \int\eta(t)dt/t_{\rm h} \approx 4$ and an average energy injection in the wind is calculated as $\bar{v_{\rm w}^2}=\int\eta(t)v_{\rm w}^2(t)dt/\bar{\eta} \approx (800~{\rm km~s}^{-1})^2$.  Interestingly, the continuous mode of star formation produces small differences from late-time $\dot{M}$ seen in cusp galaxies with impulsive star formation; however, continuous mode star formation decreases late-time $\dot{M}$ by an order of magnitude relative to impulsive star formation in core galaxies.
 
 \section{Solutions}
 \subsection{Analytics: Flow properties at $\rs$}
-It is possible to derive an analytic expression for the steady-state stagnation radius, $\rs$, in terms of $v_w$ and the power law slope of the density (at $\rs$) $n$.   We summarize the main results here and place the detailed derivation in Appendix~\ref{app:rs}.
+It is possible to derive an analytic expression for the steady-state
+stagnation radius, $\rs$, in terms of $v_w$ and the power law slope of
+the density (at $\rs$) $n$.  We parameterize our results in terms of
+$\vwOFH=\vwOFHexp$, $\Mbheight=\MbheightExp$ and
+$\xi=\left(1+\frac{0.14 \Mbheight^{0.43}}{\vwOFH}\right)^{1/2}$ . $xi$
+encapsulates the contribution of $\sigma$ in the heating.  We
+summarize the main results here and place the detailed derivation in
+Appendix~\ref{app:rs}.
+
 
 The temperature at the $\rs$ is given by
 
 \begin{align}
- &\frac{\kb T}{\mu \mp}=\gammafi \kew \label{eq:tstag}\\
- &T=6 \times 10^6 {\rm K} \, \mu \, \left({\frac{\vw}{500 \,{\rm km/s}}}\right)^2 
+  &\frac{\kb T}{\mu \mp}=\gammafi \kew \label{eq:tstag}\\
+  &T=6 \times 10^6 {\rm K} \,  \,\ \vwO500^2 \xi^2 \mu
 \end{align}
 
+
+%%Need this to be consistent with our new vw convention.
 We may also write an (implicit) analytic expression for $\rs$
 itself. Let  $\eta=v_{w,0}/\sigma_{\rm soi}$. Then 
 
+
 \begin{align}
-\x=\frac{1}{\eta^2 n}\left[ (1+\Mstar(\rs)/\Mbh)\left(A-\frac{n}{2}\right)-B\right]
-\label{eq:stag_analytic}
+  \x=\frac{1}{\eta^2 n}\left[ (1+\Mstar(\rs)/\Mbh)\left(A-\frac{n}{2}\right)-B\right]
+  \label{eq:stag_analytic}
 \end{align}
 
 Where A and B are are constants, which depend on the nuker $\gamma$
 and the adiabatic index of the gas (see Appendix~\ref{app:rs})  $\Mstar << \Mbh$ at the stagnation radius, the relationship between $\rs$ and $\vw$ is greatly simplified. 
 
 \begin{align}
-&\rs=\frac{7}{2}\frac{G \Mbh}{n \vw^2}\\
-&\simeq 6 \, \pc \left(\MbhNorm\right) \left(\vwOFH\right)^{-2}
-\label{eq:stag_simple}
+  &\rs=\frac{7}{2}\frac{G \Mbh}{n \vw^2}\\
+  &\simeq 6 \, \pc \,\, \Mbheight \left(\vwOFH\right)^{-2}
+  \label{eq:stag_simple}
 \end{align}
 
-This relationship will hold as long as $\vw > \sigma(\rsoi)$, or equivalently (from the $M-\sigma$ relationship) $\vwO > \left(\frac{\Mbh}{10^8 \Msun}\right)^{1/5} 200 {\rm \,  km/s}$.
+This relationship will hold as long as $\vw > \sigma(\rsoi)$, or equivalently (from the $M-\sigma$ relationship) $\vwO > \left(\frac{\Mbh}{10^8 \Msun}\right)^{1/5} 200 {\rm \, km/s}$.
 
 $\Mdot$ flowing towards the hole is given by
 
 \begin{align}
-\dot{M}=\frac{\eta \Menc(\rs)}{\th}
+  \dot{M}=\frac{\eta \Menc(\rs)}{\th}
 \end{align}
 
 In physical units this may be approximated as 
 
 \begin{align}
-\dot{M}\simeq
-\begin{cases}
-   1.5 \times 10^{-3}  \left(\Mbheight\right)^{1.9}
-   \left(\vwOFH\right)^{-4} \eta \Msun \, \pyear& \text{for core galaxies} \\
-   3.3 \times 10^{-3} \left(\Mbheight\right)^{1.4}
-   \left(\vwOFH\right)^{-2} \eta \Msun \, \pyear  & \text{for cusp
-     galaxies} 
- \end{cases}
-\label{eq:mdot_analytic}
+  \dot{M}\simeq
+  \begin{cases}
+    1.6 \times 10^{-3}  \left(\Mbheight\right)^{1.9}
+    \left(\vwOFH\right)^{-4} \xi^{-4} \eta \Msun \, \pyear& \text{for cores} \\
+    3.4 \times 10^{-3} \left(\Mbheight\right)^{1.4}
+    \left(\vwOFH\right)^{-2} \xi^{-2} \eta \Msun \, \pyear  & \text{for cusps} 
+  \end{cases}
+  \label{eq:mdot_analytic}
 \end{align}
 
 In our model the accretion onto the black hole may be approximated as
 the gas mass enclosed inside $\rs$ divided by the free-fall time at $\rs$.
 
 \begin{align}
-&\dot{M}\simeq\frac{(4 \pi/3) \rs^3 \rho(\rs)}{t_{\ff}(\rs)}
-\label{eq:mdot_gas}
+  &\dot{M}\simeq\frac{(4 \pi/3) \rs^3 \rho(\rs)}{t_{\ff}(\rs)}
+  \label{eq:mdot_gas}
 \end{align}
 
 Finally, using Equations~\ref{eq:tstag} and \ref{eq:mdot_analytic}, we
 may obtain a scaling relationship for $\rho(\rs)$. 
 
 \begin{align}
-\rho(\rs)\simeq
-\begin{cases}
-2.5 \times 10^{-24} \Mbheight^{-0.14} \vwOFH^{-1} \eta \, {\rm g \, cm^{-3}}& \text{for   galaxies}\\
-5.5 \times 10^{-24}  \Mbheight^{-0.56} \vwOFH    \eta \, {\rm g \,cm^{-3}} & \text{for cursp galaxies}
-\end{cases}
-\label{eq:rhors}
+  \rho(\rs)\simeq
+  \begin{cases}
+    2.6 \times 10^{-24} \Mbheight^{-0.14} \vwOFH^{-1} \xi^{-1} \eta \, {\rm g \, cm^{-3}}& \text{for cores}\\
+    5.6 \times 10^{-24}  \Mbheight^{-0.56} \vwOFH  \xi^{-1}  \eta \, {\rm g \,cm^{-3}} & \text{for cusps}
+  \end{cases}
+  \label{eq:rhors}
 \end{align}
 
 
@@ -393,28 +377,28 @@ The Bondi accretion rate, $\Mdotb$ in terms of the Bondi radius $\rb=G
 M/c_s^2$ is 
 
 \begin{align}
-\Mdotb=4\pi \lambda r_b^2 \rho(r_b) v_{\rm ff}(r_b).
+  \Mdotb=4\pi \lambda r_b^2 \rho(r_b) v_{\rm ff}(r_b).
 \end{align}
 
 We may rewrite Equation~\ref{eq:mdot_gas} as follows
 
 \begin{align}
-&\dot{M}\simeq\frac{(4 \pi/3) \rs^3 \rho(\rs)}{t_{\ff}}\\
-&=\frac{4 \pi}{3} \rs^2 \rho(\rs) v_{\ff}(\rs)
+  &\dot{M}\simeq\frac{(4 \pi/3) \rs^3 \rho(\rs)}{t_{\ff}}\\
+  &=\frac{4 \pi}{3} \rs^2 \rho(\rs) v_{\ff}(\rs)
 \end{align}
 
 Note that to within factors of order unity this is the same as Bondi formula, except $\rb$ is replaced by $\rs$. 
 From Equation~\ref{eq:stag_simple}
 
 \begin{align}
-\rs=\frac{7}{2}\frac{G \Mbh}{\vwO^2}.
-\label{eq:rs_simple}
+  \rs=\frac{7}{2}\frac{G \Mbh}{\vwO^2}.
+  \label{eq:rs_simple}
 \end{align}
 
 Where have set the power law slope of the gas density, $n$, to 1.  At $\rs$ we have
 
 \begin{align}
-\kew=\frac{c_s^2}{\gamma-1}
+  \kew=\frac{c_s^2}{\gamma-1}
 \end{align}
 
 Thus, $\cs(\rs)\simeq \vw(\rs)$. This means that $\dot{M}$ in our model is quite close to $\Mdotb$
@@ -447,22 +431,22 @@ Figure~\ref{fig:stag}.  Generally, the agreement is quite good
 (especially for $\vwO$=1000 km/s and $\vwO$=500 km/s), providing a
 useful check of the numerical results.
 
-%%AG: Describe conservation checks to additionally validate the results.
+%% AG: Describe conservation checks to additionally validate the results.
 
 
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{profiles.eps}
-\caption{\label{fig:profiles}Radial for three different galaxies:
-  NGC1172, NGC4478, and NGC3115. Solid curves correspond to $v_w$=1000
-  km/s.  The Dot-dashed curve corresponds to $v_w$=200 km/s. Top
-  panel: Density; Middle Panel: Temperature; Bottom Panel: X-ray
-  luminosity enclosed within radius $r$.}
+  \includegraphics[width=\columnwidth]{profiles.eps}
+  \caption{\label{fig:profiles}Radial for three different galaxies:
+    NGC1172, NGC4478, and NGC3115. Solid curves correspond to $v_w$=1000
+    km/s.  The Dot-dashed curve corresponds to $v_w$=200 km/s. Top
+    panel: Density; Middle Panel: Temperature; Bottom Panel: X-ray
+    luminosity enclosed within radius $r$.}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{rs.eps}
-\caption{\label{fig:stag}$\x$ vs. $\vwNorm$}
+  \includegraphics[width=\columnwidth]{rs.eps}
+  \caption{\label{fig:stag}$\x$ vs. $\vwNorm$}
 \end{figure}
 
 
@@ -474,9 +458,9 @@ $\vwO$. For each heating source from the heating rate per unit volume
 $e$ we may estimate the corresponding $\vwO$, using
 
 \begin{align}
-&\frac{q \vwO^2}{2}=e\\
-&\frac{\eta \rhostar \vwO^2}{2 t_h}=e
-\label{eq:vw_eff}
+  &\frac{q \vwO^2}{2}=e\\
+  &\frac{\eta \rhostar \vwO^2}{2 t_h}=e
+  \label{eq:vw_eff}
 \end{align}
 
 We estimate the value of the $\vwO$ for different physical heating
@@ -497,85 +481,85 @@ sources below.
   spin-down luminosity $L_{\rm sd}$ and $n_{\rm msp}$ MSPs per unit
   mass
 
-\begin{align}
-e=L_{\rm sd} n_{\rm msp} \rhostar.
-\end{align}
+  \begin{align}
+    e=L_{\rm sd} n_{\rm msp} \rhostar.
+  \end{align}
 
-Then we may obtain the $\vwO$ from Equation~\ref{eq:vw_eff}. m
+  Then we may obtain the $\vwO$ from Equation~\ref{eq:vw_eff}. m
 
-\begin{align}
-\vwO=\sqrt{\frac{2 t_h n_{\rm msp} L_{\rm sd}}{\eta}}
-\end{align}
+  \begin{align}
+    \vwO=\sqrt{\frac{2 t_h n_{\rm msp} L_{\rm sd}}{\eta}}
+  \end{align}
 
-There may be as many 30,000 MSPs in the Milky way, which would give
-$n_{\rm msp}\simeq3 \times 10^{-41} $ MSPs g$^{-1}$. Even if we
-optimistically take $L_{\rm sd}\simeq 10^{35}$ ergs/s, and $\eta$=0.1,
-we would get $\vwO\simeq40$ km/s, which means heating by MSPs is
-negligible.
+  There may be as many 30,000 MSPs in the Milky way, which would give
+  $n_{\rm msp}\simeq3 \times 10^{-41} $ MSPs g$^{-1}$. Even if we
+  optimistically take $L_{\rm sd}\simeq 10^{35}$ ergs/s, and $\eta$=0.1,
+  we would get $\vwO\simeq40$ km/s, which means heating by MSPs is
+  negligible.
 
-Also, MSPs may also be dissociated in the galactic center...
-%%Also low thermalization efficiency inferred in 47 Tuc by Naiman et al.
+  Also, MSPs may also be dissociated in the galactic center...
+  %% Also low thermalization efficiency inferred in 47 Tuc by Naiman et al.
 
 \item \emph{Type Ia SNe} From he energy injected per Ia SNe,
   $E_{\rm Ia}$, and the SNe rate, $R_{\rm Ia}$
 
-\begin{align}
-e=R_{\rm Ia} E_{\rm Ia} \rhostar
-\end{align}
+  \begin{align}
+    e=R_{\rm Ia} E_{\rm Ia} \rhostar
+  \end{align}
 
-Then from Equation~\ref{eq:vw_eff}
+  Then from Equation~\ref{eq:vw_eff}
 
-\begin{align}
-\vwO=\sqrt{\frac{2 t_h R_{\rm Ia} E_{\rm Ia}}{\eta}} \label{eq:vw_sne}
-\end{align}
+  \begin{align}
+    \vwO=\sqrt{\frac{2 t_h R_{\rm Ia} E_{\rm Ia}}{\eta}} \label{eq:vw_sne}
+  \end{align}
 
-Following \citealt{ShcherbakovWong+:2014a}, $E_{\rm Ia}=10^{51}$ ergs
-and $R_{\rm Ia}\simeq 4 \times 10^{-14} \Msun^{-1}$ yr$^{-1}$, which
-gives $\vwO\simeq 230 \, \eta^{-1/2}$ km/s (For $\eta=0.1$ this
-corresponds to $\vwO\simeq$ 500 km/s.
- %Perhaps it would be best to adopt a fiducial eta=0.1--this may be more straightforward from the pov of both heating and cooling.
+  % Following \citealt{ShcherbakovWong+:2014a}, $E_{\rm Ia}=10^{51}$ ergs
+  % and $R_{\rm Ia}\simeq 4 \times 10^{-14} \Msun^{-1}$ yr$^{-1}$, which
+  % gives $\vwO\simeq 230 \, \eta^{-1/2}$ km/s (For $\eta=0.1$ this
+  % corresponds to $\vwO\simeq$ 500 km/s.
+  % Perhaps it would be best to adopt a fiducial eta=0.1--this may be more straightforward from the pov of both heating and cooling.
 
- As noted in \citealt{ShcherbakovWong+:2014a}, SNe energy injection
- cannot necessarily be treated as constant throughout time and space,
- since the flow time-scale may be short compared to the time between
- successive SNe Ia.
+  As noted in \citealt{ShcherbakovWong+:2014a}, SNe energy injection
+  cannot necessarily be treated as constant throughout time and
+  space. This would only make sense if many SNes are exploding on the
+  dynamical timescale of the flow.
 
-There will be some radius, $\rIa$, where the dynamical timescale of
-the flow becomes comparable to the time between successive Type Ia
-SNe.  If the stagnation radius ($\rs$) of the flow is outside of
-$\rIa$ then SNes will provide a steady contribution to $\vwO$
+  To check this quantitatively we may compare the radius where the
+  dynamical timescale becomes comparable to the time between successive
+  Ias, $\rIa$, to the stagnation radius, $\rs$. If $\rIa>>\rs$, SNes
+  will provide a steady contribution to the $\vwO$. 
 
-The timescale between successive Type Ia SNes  is
+  The timescale between successive Type Ia SNes is
 
-\begin{align}
-t_{\rm Ia} \sim 2.5 \times 10^5 \Mseight^{-1} \; {\rm yrs}.
-\end{align}
+  \begin{align}
+    t_{\rm Ia} \sim 2.5 \times 10^5 \Mseight^{-1} \; {\rm yrs}.
+  \end{align}
 
-The dynamical time is given
+  The dynamical time is given
 
-\begin{align}
-  t_{\rm dyn} \sim r/\sigma \sim G \Mstar/\sigma^3 \sim 5 \times 10^4
-  \Mseight \sigma_{200}^{-3} \; {\rm yrs}.
-\end{align}
+  \begin{align}
+    t_{\rm dyn} \sim r/\sigma \sim G \Mstar/\sigma^3 \sim 5 \times 10^4
+    \Mseight \sigma_{200}^{-3} \; {\rm yrs}.
+  \end{align}
 
-Therefore,
+  Therefore,
 
-\begin{align}
-  r_{\rm Ia} \sim G \Mstar{}_{,\rm Ia}/\sigma^2 \sim 4
-  \sigma_{200}^{-1/2} \; {\rm pc}
-\end{align}
+  \begin{align}
+    r_{\rm Ia} \sim G \Mstar{}_{,\rm Ia}/\sigma^2 \sim 4
+    \sigma_{200}^{-1/2} \; {\rm pc}
+  \end{align}
 
-The stagnation radius scales linearly with $\Mbh$ (see
-Equation~\ref{eq:stag_simple}), while the $\rIa$ is roughly
-constant. For small $\Mbh$, $\rs$ is well inside $\rIa$ and SNes will
-not contribute to the $\vwO$.  Above $\sim10^8 \Msun$ SNes will
-represent an important contribution to the overall heating.
-% Thus, for $\Mbh=10^6 \Msun$, we may have $\vwO\simeq 100$ km/s with
-% heating mostly coming from main sequence winds. On the other hand,
-% for $\Mbh \gsim 10^8 \Msun$, we may have $\vwO\simeq 500$ km/s, with
-% the main contribution coming from type Ia SNe. These two regimes are
-% illustrated in Figure~\ref{fig:vw_eff}.
-%\end{enumerate}
+  The stagnation radius scales linearly with $\Mbh$ (see
+  Equation~\ref{eq:stag_simple}), while the $\rIa$ is roughly
+  constant. For small $\Mbh$, $\rs$ is well inside $\rIa$ and SNes will
+  not contribute to the $\vwO$.  Above $\sim10^8 \Msun$ SNes will
+  represent an important contribution to the overall heating.
+  % Thus, for $\Mbh=10^6 \Msun$, we may have $\vwO\simeq 100$ km/s with
+  % heating mostly coming from main sequence winds. On the other hand,
+  % for $\Mbh \gsim 10^8 \Msun$, we may have $\vwO\simeq 500$ km/s, with
+  % the main contribution coming from type Ia SNe. These two regimes are
+  % illustrated in Figure~\ref{fig:vw_eff}.
+  % \end{enumerate}
 
 \item \emph{Overall Heating Rate} The overall value of $\vwO$ has
   contributions from Type Ia SNes and main sequence winds.  The
@@ -592,20 +576,20 @@ represent an important contribution to the overall heating.
   function of $t_{\rm age}$. This dependence is why the effective
   $\vwO$ increases with $\tage$ for large $\Mbh$.
 
-For very young stellar populations ($\tage \lsim 10^7$ years),
-$\vwO\simeq 1000$ km/s due to contributions from line driven winds
-from high mass main sequence stars.
+  For very young stellar populations ($\tage \lsim 10^7$ years),
+  $\vwO\simeq 1000$ km/s due to contributions from line driven winds
+  from high mass main sequence stars.
 
-\begin{figure}
-\includegraphics[width=\columnwidth]{vw-contour.eps}
-\caption{\label{fig:vweff} Overall $\vwO$ for $\Mbh$-Stellar Age parameter space.}
-\end{figure}
+  \begin{figure}
+    \includegraphics[width=\columnwidth]{vw-contour.eps}
+    \caption{\label{fig:vweff} Overall $\vwO$ for $\Mbh$-Stellar Age parameter space.}
+  \end{figure}
 
-% AG-I am not comfortable saying type Ia SNe's don't contribute to
-% heating for smaller mass BHs. If the cooling time for the SNe is
-% long then it would be wrong to ignore the SNe contribution. The
-% difference would be that the SNe heating would just be less steady.
-% AG-Thornton and http://arxiv.org/pdf/1402.6695v2.pdf...
+  % AG-I am not comfortable saying type Ia SNe's don't contribute to
+  % heating for smaller mass BHs. If the cooling time for the SNe is
+  % long then it would be wrong to ignore the SNe contribution. The
+  % difference would be that the SNe heating would just be less steady.
+  % AG-Thornton and http://arxiv.org/pdf/1402.6695v2.pdf...
 \end{enumerate}
 
 \subsection{Mass accretion rate}
@@ -617,8 +601,8 @@ Figure~\ref{fig:mdot_mass}.  Note that $\dot{M}\sim\vwO^{-2}$ for a
 cusp galaxy and $\dot{M}\sim\vwO^{-4}$ for a core galaxy. Thus, the
 mass accretion rate will be a sensitive function of the assumed
 heating rate.
-%%AG-The variation in accretion rate for w/ vw for core galaxies is comparable to that of cusp galaxies and belies the steep dependence stated above.
-%%AG-Note separation of cores and cusps (at vw=1000 km/s, where there are enough core galaxies for this comparison to be made). Also, note that the spread in core galaxies is far larger.
+%% AG-The variation in accretion rate for w/ vw for core galaxies is comparable to that of cusp galaxies and belies the steep dependence stated above.
+%% AG-Note separation of cores and cusps (at vw=1000 km/s, where there are enough core galaxies for this comparison to be made). Also, note that the spread in core galaxies is far larger.
 
 The accretion rate is proportional to the stellar mass enclosed inside
 of $\rs$, so for core galaxies $\dot{M}\sim \Mbh (\rs/\rsoi)^{2}$,
@@ -641,54 +625,81 @@ $\eta$, so we would need to have $\eta\sim \Mbh^{-1}$ to explain the
 observed downsizing trend.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{mdot_mass.eps}
-\caption{\label{fig:mdot_mass}$\eddr$ vs. $\Mbh$}
+  \includegraphics[width=\columnwidth]{mdot_mass.eps}
+  \caption{\label{fig:mdot_mass}$\eddr$ vs. $\Mbh$}
 \end{figure}
 
-%%AG:  Also want to include a plot of x-ray luminosity (less abstract than the accretion rate). 
+%% AG:  Also want to include a plot of x-ray luminosity (less abstract than the accretion rate). 
 
 \subsection{Comparison with observations}
+\subsubsection{Comparison with observed gas temperatures and densities}
 \citealt{AllenDunn+:2006a} use Chandra x-ray observations to infer the
 temperature and density profiles for nine nearby x-ray luminous
-elliptical galaxies.  Five of the galaxies in their sample overlap
-with that in \citetalias{WangMerritt:2004a}.
+elliptical galaxies.  \citealt{RussellMcNamara+:2013a} performed a
+similar analysis with a somewhat enlarged sample.
+% At some point it would be useful to describe the differences between
+% these two sets of observations \citealt{RussellMcNamara+:2013a}
+% tries several different extrapolation schemes for the gas density,
+% and finds that that the uncertainty in extrapolating the density
+% profile is the dominant source of uncertainty in measuring the
+% accretion rate. Find total number which overlaps once the Russell
+% galaxies are included...
+Five of the galaxies in their sample overlap with that in \citetalias{WangMerritt:2004a}.
 
 We may compare our results for the $T$ and $\rho$ profiles with those
 inferred from observations for the overlapping galaxies.  Note that we
-we have two free parameters ($\eta$ and $\vwO$ in our model and thus
-we can can always match $T$ and $\rho$ at least one point.  We
-generally find that $\vwO=500$ km/s (as would be expected from SNe Ia)
-gives rough agreement with the observed temperatures.  Thus, we choose
-$\vwO=500$ km/s.  We choose an $\eta$ so that our solution would be
-consistent with the observed density profiles. The comparison is shown
-in Figure~\ref{fig:allen_compare}.
-%%AG-The chosen properties, in particular eta may be summarized in a table.
-
+we have two free parameters ($\eta$ and $\vwO$) in our
+model. Therefore, we can always match the observed $T$ and $\rho$
+profiles for at least one point.  We generally find that $\vwO=500$
+km/s (as would be expected from SNe Ia) gives rough agreement with the
+observed temperatures. 
+% Thus, we choose $\vwO=500$ km/s.  We choose an
+% $\eta$ so that our solution would be consistent with the observed
+% density profiles. The comparison is shown in
+Figure~\ref{fig:allen_compare}.
+%% AG-The chosen properties, in particular eta may be summarized in a table.
+%% AG-Mention rising temperature profiles on large scales.
 
 \begin{itemize}
-\item \emph{NGC4486} %eta=0.2
-  On scales of $\sim1$ kpc the density profile in
-  \citealt{AllenDunn+:2006a} is shallower than in our model. Our model
-  has a break in the gas density at $\sim 300$ pc--near the location
-  of the Nuker break radius for this galaxy at 560 pc. There is an
-  observed break in the density, but on a scale of a few kpc.
+% \item \emph{NGC4486} %eta=0.2
+%   On scales of $\sim1$ kpc the density profile in
+%   \citealt{AllenDunn+:2006a} is shallower than in our model. Our model
+%   has a break in the gas density at $\sim 300$ pc--near the location
+%   of the Nuker break radius for this galaxy at 560 pc. There is an
+%   observed break in the density, but on a scale of a few kpc.
 
-  In contrast to a naive extrapolation of the observed $T$ and $\rho$
-  to smaller scales, our models have $T$ and $\rho$ monotonically
-  increasing towards the galactic center. The increase in $T$ is due
-  to the increased velocity dispersion (and thus increased heating)
-  towards the galactic center.
+%   The temperature is assumed to be flat from the resolution limit
+%   inwards in \citealt{AllenDunn+:2006a}. However, in our models $T$
+%   increases monotonically towards the galactic center. This increase
+%   is due to the increased velocity dispersion (and thus increased
+%   heating) towards the galactic center.
+
+\item \emph{NGC5813} %eta=0.1
+  The observed density profile \citealt{RussellMcNamara+:2013a} is
+  shallower than our calculated density profile, which has a sharp
+  break at $\sim$0.1 kpc, the location of the break radius in the
+  Nuker profile (this is the radius where the stellar light profile
+  transitions from a shallower inner power law slope to a steeper
+  outer power law slope.
+
+  For this galaxy we found that we could reproduce the observed
+  temperature on large scales with $\vwO=500$ km/s. The increased
+  velocity disperision towards the galactic center results in a sharp
+  increase in $T$ at small radii, which is not captured in the
+  observations due to resolution issues.
 \end{itemize}
 
+%It would be nice to have error bars for the observational points in this plot...
 \begin{figure*}
-\includegraphics[width=\columnwidth]{T_compare.eps}
-\includegraphics[width=\columnwidth]{dens_compare.eps}
-\caption{\label{fig:allen_compare} Comparison of $n_e$ and $T$ to the \citealt{AllenDunn+:2006a}}. 
-%%AG in the future we will have to be carfeful of the mean molecular weight.
+  \includegraphics[width=\columnwidth]{NGC5813_T.eps}
+  \includegraphics[width=\columnwidth]{NGC5813_rho.eps}
+  \caption{\label{fig:allen_compare} Comparison of $n_e$ and $T$ to
+    the profiles in \citealt{AllenDunn+:2006a} and \citealt{ RussellMcNamara+:2013a}}.
+  %% AG in the future we will have to be carfeful of the mean molecular weight.
 \end{figure*}
 
 
- 
+
 \subsection{Cooling}
 \label{sec:cooling}
 In our models stellar winds collide, shock heat, and thermalize. The
@@ -703,26 +714,27 @@ for $T\lsim 2\times 10^7$ K, or through free-free emission for $T\gsim
 the rate of energy injection then radiative cooling may be safely
 neglected.
 
-For each of our solutions we compare the radiative cooling rate, $C$
-to the heating rate $H=q \vw^2/2$. If $H/C \gg 1$ then cooling may be
-neglected. We take
+To assess the importance of radiative cooling for our solutions we
+compare the radiative cooling rate, $C$ to the heating rate $H=q
+\vw^2/2$. If $H/C \gg 1$ then cooling may be neglected. We take
 
 \begin{align}
-c=\Lambda(T) n^2.
+  c=\Lambda(T) n^2.
 \end{align}
 
+%% at low densities there might be some sort of non-CIE cooling operating.
 Where $n$ is the number density and $\Lambda(T)$ is the cooling
 function. We approximate $\Lambda(T)$ as piece-wise power law (fitted
 for solar metallicity--see Figure 34.1 in \cite{Draine:2011a})
-%cite Draine
+
 
 \begin{align}
-\Lambda(T)\simeq
-\begin{cases}
+  \Lambda(T)\simeq
+  \begin{cases}
     2.3 \times 10^{-24} \left(T/10^6 \text{K}\right)^{0.5} $erg cm$^3 $s$^{-1}& \text{if } T \gsim 2 \times 10^7 \text{K} \\
     1.1 \times 10^{-22} \left(T/10^6 \text{K}\right)^{-0.7}  $erg cm$^3 $s$^{-1}& \text{if } T \lsim 2 \times 10^7 \text{K}     
-\end{cases}
-\label{eq:cooling}
+  \end{cases}
+  \label{eq:cooling}
 \end{align}
 
 Note $C\propto n^2\propto \eta^2$. On the other hand, $H \propto q
@@ -731,8 +743,8 @@ parameter $\eta$. We plot $H/C$ for all of our profiles for our
 fiducial $\eta=1$.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{cooling.eps}
-\caption{\label{fig:cooling} Ratio of heating ($H$) to cooling rate ($C$) for each of our solutions. The cooling rate is calculated using the approximate (solar metallicity) cooling function in Equation~\ref{eq:cooling}. The heating rate is estimated as $q \vw^2/2$. The ratio is computed assuming $\eta=1$.}
+  \includegraphics[width=\columnwidth]{cooling.eps}
+  \caption{\label{fig:cooling} Ratio of heating ($H$) to cooling rate ($C$) for each of our solutions. The cooling rate is calculated using the approximate (solar metallicity) cooling function in Equation~\ref{eq:cooling}. The heating rate is estimated as $q \vw^2/2$. The ratio is computed assuming $\eta=1$.}
 \end{figure}
 
 For $\vwO$=1000 km/s, it is apparent from Figure~\ref{fig:cooling},
@@ -757,55 +769,78 @@ our profiles and should be included.
 \subsection{Conduction}
 \label{sec:conduction}{
 
-\subsection{Angular Momentum}
-\label{sec:ang}
-Our models are spherically symmetric and do not include the effects of
-the gas' angular momentum. However, galaxies will in general have some
-net rotation, and the gas will generally have some non-zero angular
-momentum. At some radius, $\rcirc$, the specific angular momentum of
-the gas will equal the specific angular momentum of a circular
-orbit. Inside of this radius our assumptions of no rotation and
-spherical symmetry will break down. But if $\rcirc$ inner sonic point
-of the flow, the region where angular momentum becomes important will
-be causally disconnected from the rest of the flow, and we would be
-justified in neglecting angular momentum (at least on large scales). 
+  \subsection{Angular Momentum}
+  \label{sec:ang}
+  Our models are spherically symmetric and do not include the effects of
+  the gas' angular momentum. However, galaxies will in general have some
+  net rotation, and the gas will generally have some non-zero angular
+  momentum. At some radius, $\rcirc$, the specific angular momentum of
+  the gas will equal the specific angular momentum of a circular
+  orbit. Inside of this radius our assumptions of no rotation and
+  spherical symmetry will break down. But if $\rcirc$ is inside of the
+  inner sonic point of the flow, the region where angular momentum
+  becomes important will be causally disconnected from the rest of the
+  flow, and we would be justified in neglecting angular momentum (at
+  least on large scales).
 
-The inner sonic point, $\rss$ general occurs at $\simq 1\%$ of
-$\rinf$. $\rcirc$ depends on the gas injection radius. The largest
-injection radius is $\rs$. Let $\lrs$ be the gas specific angular
-momentum at $\rs$, then 
+  $\rcirc$ depends on the gas injection radius. The largest
+  injection radius is $\rs$. Let $\lrs$ be the gas specific angular
+  momentum at $\rs$, then 
 
-\begin{align}
-\rcirc=\frac{\lrs}{G \Mbh}
-\end{align}
+  \begin{align}
+    \rcirc=\frac{\lrs}{G \Mbh}
+  \end{align}
 
- used two-dimensional kinematic data to measure the ratio of ordered
- to random motion in a sample of early type galaxies. More precisely,
- they measure 
+  \citealt{EmsellemCappellari+:2007a} used two-dimensional kinematic
+  data to measure the ratio of ordered to random motion in a sample of
+  early type galaxies. More precisely, they measure
 
-\begin{align}
-\lambda_R=\frac{\left<R|V|\right>}{\lef<R\sqrt{V^2+\sigma^2}\right>}
-\end{align}
+  \begin{align}
+    \lambda_R=\frac{\left<R|V|\right>}{\left<R\sqrt{V^2+\sigma^2}\right>}
+  \end{align}
 
-Where $R$ is the distance is the distance from the galactic center, $V$ is
-the mean stellar velocity, and $\sigma$ is the velocity
-disperison. The brackets represent a luminosity weighted average.
+  Where $R$ is the distance is the distance from the galactic center, $V$ is
+  the mean stellar velocity, and $\sigma$ is the velocity
+  dispersion. The brackets represent a luminosity weighted average.
 
-$\lrs\simeq\lambdars \sigma(\rs)^2 \rs^2$ 
-\section{Summary}
+  We may rewrite the specific angular momentum at $\rs$ in terms of $\lambda_R$.
 
-\appendix
-\clearpage
-\section{Analytic Expression for the stagnation radius}
-\label{app:rs}
-\input{rs}
+  \begin{align}
+    \lrs\simeq\lambdars \sigma(\rs)^2 \rs^2
+  \end{align}
 
-\section{Dependence of q on stellar age}
-\label{app:eta}
-\input{eta}
+  Then
 
-\footnotesize{
-  \bibliographystyle{mn2e}
-  \bibliography{master}
-}
+  \begin{align}
+    \rcirc&\simeq\lambdars^2 \frac{\sigma(\rs)^2}{G \Mbh} \rs^2\\
+    &\simeq\lambdars^2 \frac{\rs^2}{\rsoi} \lsim \lambdars^2 \rsoi
+  \end{align}
+
+  The inner sonic point, $\rss$ general occurs at $\simeq 1\%$ of
+  $\rsoi$. %%AG-Need to explain this somehow.
+  So if $\lambdars\lsim 0.1$, $\rcirc<\rss$. In Figure 2 of
+  \citealt{EmsellemCappellari+:2007a} $\lambda_R$ is plotted as function
+  of radius for a sample of early type galaxies. On scales of $\sim 0.1
+  R_e$ $\lambda_R$ is either less than 0.1 or rapidly declining for most
+  of their sample %%need to be clearer on rapidly declining also compare
+  %% this scale to the sphere of influence scale.
+  This suggests that angular momentum should generally be unimportant.
+
+  \section{Summary}
+  
+
+  \clearpage
+  \appendix
+  \section{Analytic Expression for the stagnation radius}
+  \label{app:rs}
+  \input{rs}
+
+  \section{Dependence of q on stellar age}
+  \label{app:eta}
+  \input{eta}
+
+  \footnotesize{
+    \bibliographystyle{mn2e}
+    \bibliography{master}
+  }
 \end{document}
