@@ -63,6 +63,8 @@
 \newcommand{\ff}{\rm ff}
 \newcommand{\tff}{t_{\ff}}
 \newcommand{\rIa}{r_{\rm Ia}}
+\newcommand{\EIa}{E_{\rm Ia}}
+\newcommand{\RateIa}{R_{\rm Ia}}
 \newcommand{\sigsoi}{\sigma_{\soi}}
 
 \newcommand{\vwO}{v_{w,0}}
@@ -297,7 +299,7 @@ It is possible to derive an analytic expression for the steady-state
 stagnation radius, $\rs$, in terms of $v_w$ and the power law slope of
 the density (at $\rs$) $n$.  We parameterize our results in terms of
 $\vwOFH=\vwOFHexp$, $\Mbheight=\MbheightExp$ and
-$\xi=\left(1+\frac{0.14 \Mbheight^{0.43}}{\vwOFH}\right)^{1/2}$ . $xi$
+$\xi=\left(1+\frac{0.14 \Mbheight^{0.43}}{\vwOFH}\right)^{1/2}$. $\xi$
 encapsulates the contribution of $\sigma$ in the heating.  We
 summarize the main results here and place the detailed derivation in
 Appendix~\ref{app:rs}.
@@ -307,7 +309,7 @@ The temperature at the $\rs$ is given by
 
 \begin{align}
   &\frac{\kb T}{\mu \mp}=\gammafi \kew \label{eq:tstag}\\
-  &T=6 \times 10^6 {\rm K} \,  \,\ \vwO500^2 \xi^2 \mu
+  &T=6 \times 10^6 {\rm K} \,  \,\ \vwOFH^2 \, \xi^2 \mu
 \end{align}
 
 
@@ -325,7 +327,7 @@ Where A and B are are constants, which depend on the nuker $\gamma$
 and the adiabatic index of the gas (see Appendix~\ref{app:rs})  $\Mstar << \Mbh$ at the stagnation radius, the relationship between $\rs$ and $\vw$ is greatly simplified. 
 
 \begin{align}
-  &\rs=\frac{7}{2}\frac{G \Mbh}{n \vw^2}\\
+  &\rs=\frac{7}{2}\frac{G \Mbh}{n \vwO^2}\\
   &\simeq 6 \, \pc \,\, \Mbheight \left(\vwOFH\right)^{-2}
   \label{eq:stag_simple}
 \end{align}
@@ -365,8 +367,9 @@ may obtain a scaling relationship for $\rho(\rs)$.
 \begin{align}
   \rho(\rs)\simeq
   \begin{cases}
-    2.6 \times 10^{-24} \Mbheight^{-0.14} \vwOFH^{-1} \xi^{-1} \eta \, {\rm g \, cm^{-3}}& \text{for cores}\\
-    5.6 \times 10^{-24}  \Mbheight^{-0.56} \vwOFH  \xi^{-1}  \eta \, {\rm g \,cm^{-3}} & \text{for cusps}
+    2.6 \times 10^{-24} \Mbheight^{-0.14} \vwOFH^{-1} \xi^{-1} \eta \,
+    \, {\rm g \, cm^{-3}}& \text{for cores}\\
+    5.6 \times 10^{-24}  \Mbheight^{-0.56} \vwOFH  \xi  \eta \,\, {\rm g \,cm^{-3}} & \text{for cusps}
   \end{cases}
   \label{eq:rhors}
 \end{align}
@@ -446,8 +449,16 @@ useful check of the numerical results.
 
 \begin{figure}
   \includegraphics[width=\columnwidth]{rs.eps}
-  \caption{\label{fig:stag}$\x$ vs. $\vwNorm$}
+  \caption{\label{fig:stag} \emph{Top panel:} $\x$ vs. $\vwNorm$ for
+    our sample for three different values of $\vwO$. Blue is
+    $\vwO=1000$ km/s, orange is $\vwO=500$ km/s and green is
+    $\vwO=200$ km/s. Squares correspond to cusp galaxies, while
+    triangles correspond to cores. \emph{Bottom panel}: Fractional difference
+    between numerical $x$ and the analytic result in
+    Equation~\ref{eq:stag_analytic}. Points are colored in the same
+    way as in the top panel.}
 \end{figure}
+
 
 
 \section{Discussion}
@@ -501,7 +512,7 @@ sources below.
   %% Also low thermalization efficiency inferred in 47 Tuc by Naiman et al.
 
 \item \emph{Type Ia SNe} From he energy injected per Ia SNe,
-  $E_{\rm Ia}$, and the SNe rate, $R_{\rm Ia}$
+  $E_{\rm Ia}$, and the SNe rate (per stellar mass), $R_{\rm Ia}$
 
   \begin{align}
     e=R_{\rm Ia} E_{\rm Ia} \rhostar
@@ -512,6 +523,24 @@ sources below.
   \begin{align}
     \vwO=\sqrt{\frac{2 t_h R_{\rm Ia} E_{\rm Ia}}{\eta}} \label{eq:vw_sne}
   \end{align}
+
+  $\EIa \simeq10^{51}$ ergs. $\RateIa$ will depend on the age of the
+  stellar population. $\eta$ can be calculated using
+  Equation~\ref{eq:eta} in Appendix~\ref{app:eta}. $\RateIa$ may be
+  calculated using the delay time distribution in
+  \citealt{MaozMannucci+:2012a}. Generally, $\RateIa$ is the
+  convolution of the star formation rate and the delay time
+  distribution divided by the present stellar mass. In the limit of
+  impulsive star formation, $\RateIa$ is the delay time distribution
+  evaluated at the time since the star formation episode. The delay
+  time distribution plotted in Figure 1 of
+  \citealt{MaozMannucci+:2012a}, and has a functional form
+
+  \begin{align}
+    \Psi(\tau)=\frac{.03
+      \left(\tau/10^8\right)^{-1.12}}{10^{10} \Msun}
+  \end{align}
+  
 
   % Following \citealt{ShcherbakovWong+:2014a}, $E_{\rm Ia}=10^{51}$ ergs
   % and $R_{\rm Ia}\simeq 4 \times 10^{-14} \Msun^{-1}$ yr$^{-1}$, which
@@ -531,6 +560,8 @@ sources below.
 
   The timescale between successive Type Ia SNes is
 
+  %AG--this would need to be adjusted to account for the delay time
+  %distribution...
   \begin{align}
     t_{\rm Ia} \sim 2.5 \times 10^5 \Mseight^{-1} \; {\rm yrs}.
   \end{align}
@@ -570,7 +601,7 @@ sources below.
   compared to $t_{\rm Ia}$, and the heating is dominated by main
   sequence winds (with $\vwO\simeq 100$ km/s).  On the other hand, for
   $\Mbh \gsim 10^8 \Msun$, heating from Ias becomes important, as
-  $\rs>\rIa$.  In this regime, we add the $\vwO$ values from SNe Ias
+  $\rs>\rIa$. In this regime, we add the $\vwO$ values from SNe Ias
   and from main sequence winds in quadrature. $\vwO$ from SNe Ia's
   depends on the rate of mass loss ($\eta$), which is in turn a
   function of $t_{\rm age}$. This dependence is why the effective
@@ -582,7 +613,12 @@ sources below.
 
   \begin{figure}
     \includegraphics[width=\columnwidth]{vw-contour.eps}
-    \caption{\label{fig:vweff} Overall $\vwO$ for $\Mbh$-Stellar Age parameter space.}
+    \caption{\label{fig:vweff} Overall $\vwO$ for $\Mbh$-Stellar Age
+      parameter space. The contribution from stellar winds is taken to
+      be $100$ km/s. The contribution from SNe Ia is calculated using
+      Equation~\ref{eq:vw_sne}. The contribution from SNe Ia is only
+      added if the $r_s$ corresponding to the resulting $\vwO$ is
+      outside $\rIa$.}%describe other cases here.
   \end{figure}
 
   % AG-I am not comfortable saying type Ia SNe's don't contribute to
@@ -626,7 +662,11 @@ observed downsizing trend.
 
 \begin{figure}
   \includegraphics[width=\columnwidth]{mdot_mass.eps}
-  \caption{\label{fig:mdot_mass}$\eddr$ vs. $\Mbh$}
+  \caption{\label{fig:mdot_mass}$\eddr$ vs. $\Mbh$ for our sample. for
+    our sample for three different values of $\vwO$. Blue is
+    $\vwO=1000$ km/s, orange is $\vwO=500$ km/s and green is
+    $\vwO=200$ km/s. Squares correspond to cusp galaxies, while
+    triangles correspond to cores.}
 \end{figure}
 
 %% AG:  Also want to include a plot of x-ray luminosity (less abstract than the accretion rate). 
@@ -680,7 +720,7 @@ Figure~\ref{fig:allen_compare}.
   break at $\sim$0.1 kpc, the location of the break radius in the
   Nuker profile (this is the radius where the stellar light profile
   transitions from a shallower inner power law slope to a steeper
-  outer power law slope.
+  outer power law slope).
 
   For this galaxy we found that we could reproduce the observed
   temperature on large scales with $\vwO=500$ km/s. The increased
